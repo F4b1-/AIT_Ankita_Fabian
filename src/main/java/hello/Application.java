@@ -1,5 +1,6 @@
 package hello;
 
+import com.vaadin.tapio.googlemaps.client.LatLon;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,10 +19,13 @@ public class Application {
 	}
 
 	@Bean
-	public CommandLineRunner loadData(CustomerRepository repository) {
+	public CommandLineRunner loadData(LocationRepository repository) {
 		return (args) -> {
 			// save a couple of customers
-			repository.save(new Customer("Jack", "Bauer"));
+            repository.deleteAll();
+			repository.save(new Location("Trichtingen", new LatLon(48.2751726, 8.6505911)));
+            repository.save(new Location("Bonn", new LatLon(50.73743, 7.0982068)));
+		/*	repository.save(new Customer("Jack", "Bauer"));
 			repository.save(new Customer("Chloe", "O'Brian"));
 			repository.save(new Customer("Kim", "Bauer"));
 			repository.save(new Customer("David", "Palmer"));
@@ -42,7 +46,7 @@ public class Application {
 					.findByLastName("Bauer")) {
 				log.info(bauer.toString());
 			}
-			log.info("");
+			log.info("");*/
 		};
 	}
 
