@@ -1,5 +1,7 @@
-package hello;
+package com.unibz.hikinghelper.ui;
 
+import com.unibz.hikinghelper.Location;
+import com.unibz.hikinghelper.LocationRepository;
 import com.vaadin.annotations.Theme;
 import com.vaadin.navigator.Navigator;
 import com.vaadin.server.FontAwesome;
@@ -92,11 +94,14 @@ public class VaadinUI extends UI {
 		grid.asSingleSelect().addValueChangeListener(e -> {
 		    option.addComponentsAndExpand(googleMap);
 		    Location currentLocation = e.getValue();
-		    String currentName = currentLocation.getName();
-		    LatLon currentLatLon = currentLocation.getLatLon();
-            googleMap.setCenter(currentLatLon);
-            googleMap.addMarker(currentName, currentLatLon, false, null);
-			//editor.editCustomer(e.getValue());
+		    if(currentLocation != null) {
+                String currentName = currentLocation.getName();
+                LatLon currentLatLon = currentLocation.getLatLon();
+                googleMap.setCenter(currentLatLon);
+                googleMap.clearMarkers();
+                googleMap.addMarker(currentName, currentLatLon, false, null);
+            }
+			editor.editLocation(e.getValue());
 		});
 
 		// Instantiate and edit new Customer the new button is clicked

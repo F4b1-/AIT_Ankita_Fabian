@@ -7,7 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="gs-crud-with-vaadin" />
+        <module name="hiking_helper" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="gs-crud-with-vaadin" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

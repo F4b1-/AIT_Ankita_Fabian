@@ -1,5 +1,7 @@
-package hello;
+package com.unibz.hikinghelper.ui;
 
+import com.unibz.hikinghelper.Location;
+import com.unibz.hikinghelper.LocationRepository;
 import com.vaadin.data.Binder;
 import com.vaadin.data.ValueProvider;
 import com.vaadin.event.ShortcutAction;
@@ -36,7 +38,7 @@ public class LocationEditor extends VerticalLayout {
 	private Location location;
 
 	/* Fields to edit properties in Customer entity */
-	TextField name = new TextField("First name");
+	TextField name = new TextField("Name");
 	TextField lat = new TextField("Latitude");
 	TextField lon = new TextField("Longitude");
 	LatLon latLon = new LatLon();
@@ -106,6 +108,8 @@ public class LocationEditor extends VerticalLayout {
 		// Bind customer properties to similarly named fields
 		// Could also use annotation or "manual binding" or programmatically
 		// moving values from fields to entities before saving
+        binder.setBean(location);
+
         binder.bind(name, Location::getName, Location::setName);
 
         binder.bind(lat,

@@ -1,4 +1,4 @@
-package hello;
+package com.unibz.hikinghelper;
 
 import com.vaadin.tapio.googlemaps.client.LatLon;
 import org.slf4j.Logger;
