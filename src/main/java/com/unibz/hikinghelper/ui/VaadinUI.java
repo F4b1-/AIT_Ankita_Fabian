@@ -16,9 +16,22 @@ import com.vaadin.tapio.googlemaps.GoogleMap;
 
 import java.util.ArrayList;
 
-@SpringUI
-//@Theme("")
+@SpringUI(path = "/application")
 public class VaadinUI extends UI {
+
+    // Menu navigation button listener
+    class ButtonListener implements Button.ClickListener {
+        String menuitem;
+        public ButtonListener(String menuitem) {
+            this.menuitem = menuitem;
+        }
+
+        @Override
+        public void buttonClick(Button.ClickEvent event) {
+            // Navigate to a specific state
+            //navigator.navigateTo(MAINVIEW + "/" + menuitem);
+        }
+    }
 
 	private final LocationRepository repo;
 
@@ -31,6 +44,8 @@ public class VaadinUI extends UI {
 	private final Button addNewBtn;
 
 	final GoogleMap googleMap = new GoogleMap("AIzaSyAdXfqEgqkjkDBBFC2dRoWU_-dST-S34dk", null, "english");
+
+	private final static String MENU_BUTTON_STYLENAME = "menu_button";
 
 
     public VaadinUI(LocationRepository repo, LocationEditor editor) {
@@ -46,8 +61,27 @@ public class VaadinUI extends UI {
 		// build layout
 		HorizontalLayout actions = new HorizontalLayout(filter, addNewBtn);
         HorizontalLayout option = new HorizontalLayout(grid);
-		VerticalLayout mainLayout = new VerticalLayout(actions, option, editor);
-		setContent(mainLayout);
+
+        VerticalLayout menuContent = new VerticalLayout();
+
+        Button pigButton = new Button("Pig", new ButtonListener("pig"));
+        pigButton.setPrimaryStyleName(MENU_BUTTON_STYLENAME);
+        menuContent.addComponent(pigButton);
+        menuContent.addComponent(new Button("Cat",
+                new ButtonListener("cat")));
+        menuContent.addComponent(new Button("Dog",
+                new ButtonListener("dog")));
+        menuContent.addComponent(new Button("Reindeer",
+                new ButtonListener("reindeer")));
+        menuContent.addComponent(new Button("Penguin",
+                new ButtonListener("penguin")));
+        menuContent.addComponent(new Button("Sheep",
+                new ButtonListener("sheep")));
+
+
+		VerticalLayout mainLayout = new VerticalLayout(menuContent, actions, option, editor);
+        HorizontalLayout main = new HorizontalLayout(menuContent, mainLayout);
+		setContent(main);
 
 		grid.setHeight(300, Unit.PIXELS);
 
@@ -92,7 +126,7 @@ public class VaadinUI extends UI {
 
 		// Connect selected Customer to editor or hide if none is selected
 		grid.asSingleSelect().addValueChangeListener(e -> {
-		    option.addComponentsAndExpand(googleMap);
+		    option.addComponent(googleMap);
 		    Location currentLocation = e.getValue();
 		    if(currentLocation != null) {
                 String currentName = currentLocation.getName();

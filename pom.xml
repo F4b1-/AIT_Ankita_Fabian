@@ -60,6 +60,12 @@
             <artifactId>vaadin-maven-plugin</artifactId>
             <version>7.7.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-themes</artifactId>
+            <version>8.4.0</version>
+        </dependency>
+
     </dependencies>
 
     <repositories>
