@@ -23,7 +23,7 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 @Configuration
 @EnableWebMvc
 @ComponentScan({ "com.unibz.hikinghelper" })
-public class Application implements WebMvcConfigurer {
+public class Application  implements WebMvcConfigurer {
 
 	private static final Logger log = LoggerFactory.getLogger(Application.class);
 
@@ -34,6 +34,8 @@ public class Application implements WebMvcConfigurer {
 
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
+        registry.addResourceHandler("/css/**").addResourceLocations("classpath:/css/");
+        registry.addResourceHandler("/js/**").addResourceLocations("classpath:/js/");
 	}
 
 	@Bean

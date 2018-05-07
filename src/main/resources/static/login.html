@@ -212,14 +212,16 @@ Vaadin-Refresh: context://login.html
     <p>admin@vaadin.com + admin </p>
 </div>
 <div id="form">
-    <form method="post" action="/application" id="theform">
+    <form method="post" action="/login" id="theform">
         <h2>Sign in</h2>
         <label id="login-label" for="login">Email</label>
         <input type="text" id="login" name="username" aria-labelledby="login-label" autofocus>
         <label id="password-label" for="password">Password</label>
         <input type="password" id="password" name="password" aria-labelledby="password-label">
         <button id="button-submit" type="submit">Sign in</button>
+        <button id="button-submit" type="submit">Register</button>
     </form>
+
 </div>
 </body>
 </html>

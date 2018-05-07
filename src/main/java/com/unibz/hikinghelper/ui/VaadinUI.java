@@ -1,5 +1,10 @@
 package com.unibz.hikinghelper.ui;
 
+import com.byteowls.vaadin.chartjs.config.BarChartConfig;
+import com.byteowls.vaadin.chartjs.data.BarDataset;
+import com.byteowls.vaadin.chartjs.data.Dataset;
+import com.byteowls.vaadin.chartjs.data.LineDataset;
+import com.byteowls.vaadin.chartjs.options.Position;
 import com.unibz.hikinghelper.Location;
 import com.unibz.hikinghelper.LocationRepository;
 import com.vaadin.annotations.Theme;
@@ -13,8 +18,10 @@ import com.vaadin.tapio.googlemaps.client.overlays.GoogleMapPolyline;
 import com.vaadin.ui.*;
 import org.springframework.util.StringUtils;
 import com.vaadin.tapio.googlemaps.GoogleMap;
+import com.byteowls.vaadin.chartjs.ChartJs;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @SpringUI(path = "/application")
 public class VaadinUI extends UI {
@@ -61,6 +68,7 @@ public class VaadinUI extends UI {
 		// build layout
 		HorizontalLayout actions = new HorizontalLayout(filter, addNewBtn);
         HorizontalLayout option = new HorizontalLayout(grid);
+        option.addComponent(generateBarChart());
 
         VerticalLayout menuContent = new VerticalLayout();
 
@@ -84,6 +92,8 @@ public class VaadinUI extends UI {
 		setContent(main);
 
 		grid.setHeight(300, Unit.PIXELS);
+
+
 
 
         grid.addColumn(location -> location.getLatLon().getLat()).setCaption("Latitude").setId("latitude");
@@ -173,5 +183,50 @@ public class VaadinUI extends UI {
         }
     }
     // end::listCustomers[]
+
+
+    private ChartJs  generateBarChart() {
+        BarChartConfig config = new BarChartConfig();
+        config
+                .data()
+                .labels("January", "February", "March", "April", "May", "June", "July")
+                .addDataset(new BarDataset().type().label("Dataset 1").backgroundColor("rgba(151,187,205,0.5)").borderColor("white").borderWidth(2))
+                .addDataset(new LineDataset().type().label("Dataset 2").backgroundColor("rgba(151,187,205,0.5)").borderColor("white").borderWidth(2))
+                .addDataset(new BarDataset().type().label("Dataset 3").backgroundColor("rgba(220,220,220,0.5)"))
+                .and();
+
+        config.
+                options()
+                .responsive(true)
+                .title()
+                .display(true)
+                .position(Position.LEFT)
+                .text("Chart.js Combo Bar Line Chart")
+                .and()
+                .done();
+
+        List<String> labels = config.data().getLabels();
+        for (Dataset<?, ?> ds : config.data().getDatasets()) {
+            List<Double> data = new ArrayList<>();
+            for (int i = 0; i < labels.size(); i++) {
+                data.add((double) (Math.random() > 0.5 ? 1.0 : -1.0) * Math.round(Math.random() * 100));
+            }
+
+            if (ds instanceof BarDataset) {
+                BarDataset bds = (BarDataset) ds;
+                bds.dataAsList(data);
+            }
+
+            if (ds instanceof LineDataset) {
+                LineDataset lds = (LineDataset) ds;
+                lds.dataAsList(data);
+            }
+        }
+
+        ChartJs chart = new ChartJs(config);
+        chart.setJsLoggingEnabled(true);
+
+        return chart;
+    }
 
 }
