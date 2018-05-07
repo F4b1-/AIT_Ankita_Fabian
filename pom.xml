@@ -37,6 +37,28 @@
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- Spring Security Dependency
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>4.2.3.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>4.2.3.RELEASE</version>
+        </dependency>
+-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
@@ -60,6 +82,19 @@
             <artifactId>vaadin-maven-plugin</artifactId>
             <version>7.7.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-themes</artifactId>
+            <version>8.4.0</version>
+        </dependency>
+
+        <!-- UI Libs -->
+        <dependency>
+            <groupId>com.byteowls</groupId>
+            <artifactId>vaadin-chartjs</artifactId>
+            <version>1.2.0</version>
+        </dependency>
+
     </dependencies>
 
     <repositories>
@@ -71,6 +106,12 @@
             <id>vaadin-addons</id>
             <url>http://maven.vaadin.com/vaadin-addons</url>
         </repository>
+    <!--    <repository>
+            <snapshots><enabled>false</enabled></snapshots>
+            <id>central</id>
+            <name>bintray</name>
+            <url>http://jcenter.bintray.com</url>
+        </repository> -->
     </repositories>
 
     <!-- tag::bom[] -->

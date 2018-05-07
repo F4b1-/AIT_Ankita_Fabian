@@ -5,7 +5,7 @@ Hint to Vaadin that if this page is ever sent back as response to a UIDL request
 Vaadin-Refresh: context://login.html
 -->
 <head>
-    <title>Vaadin Demo Bakery App</title>
+    <title>Hiking Helper</title>
 
     <link rel="shortcut icon" href="VAADIN/themes/apptheme/favicon.ico" />
 
@@ -212,14 +212,16 @@ Vaadin-Refresh: context://login.html
     <p>admin@vaadin.com + admin </p>
 </div>
 <div id="form">
-    <form method="post" action="login" id="theform">
+    <form method="post" action="/login" id="theform">
         <h2>Sign in</h2>
         <label id="login-label" for="login">Email</label>
         <input type="text" id="login" name="username" aria-labelledby="login-label" autofocus>
         <label id="password-label" for="password">Password</label>
         <input type="password" id="password" name="password" aria-labelledby="password-label">
         <button id="button-submit" type="submit">Sign in</button>
+        <button id="button-submit" type="submit">Register</button>
     </form>
+
 </div>
 </body>
 </html>

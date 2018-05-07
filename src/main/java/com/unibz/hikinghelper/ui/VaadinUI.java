@@ -1,5 +1,10 @@
 package com.unibz.hikinghelper.ui;
 
+import com.byteowls.vaadin.chartjs.config.BarChartConfig;
+import com.byteowls.vaadin.chartjs.data.BarDataset;
+import com.byteowls.vaadin.chartjs.data.Dataset;
+import com.byteowls.vaadin.chartjs.data.LineDataset;
+import com.byteowls.vaadin.chartjs.options.Position;
 import com.unibz.hikinghelper.Location;
 import com.unibz.hikinghelper.LocationRepository;
 import com.vaadin.annotations.Theme;
@@ -13,12 +18,27 @@ import com.vaadin.tapio.googlemaps.client.overlays.GoogleMapPolyline;
 import com.vaadin.ui.*;
 import org.springframework.util.StringUtils;
 import com.vaadin.tapio.googlemaps.GoogleMap;
+import com.byteowls.vaadin.chartjs.ChartJs;
 
 import java.util.ArrayList;
+import java.util.List;
 
-@SpringUI
-//@Theme("")
+@SpringUI(path = "/application")
 public class VaadinUI extends UI {
+
+    // Menu navigation button listener
+    class ButtonListener implements Button.ClickListener {
+        String menuitem;
+        public ButtonListener(String menuitem) {
+            this.menuitem = menuitem;
+        }
+
+        @Override
+        public void buttonClick(Button.ClickEvent event) {
+            // Navigate to a specific state
+            //navigator.navigateTo(MAINVIEW + "/" + menuitem);
+        }
+    }
 
 	private final LocationRepository repo;
 
@@ -31,6 +51,8 @@ public class VaadinUI extends UI {
 	private final Button addNewBtn;
 
 	final GoogleMap googleMap = new GoogleMap("AIzaSyAdXfqEgqkjkDBBFC2dRoWU_-dST-S34dk", null, "english");
+
+	private final static String MENU_BUTTON_STYLENAME = "menu_button";
 
 
     public VaadinUI(LocationRepository repo, LocationEditor editor) {
@@ -46,10 +68,32 @@ public class VaadinUI extends UI {
 		// build layout
 		HorizontalLayout actions = new HorizontalLayout(filter, addNewBtn);
         HorizontalLayout option = new HorizontalLayout(grid);
-		VerticalLayout mainLayout = new VerticalLayout(actions, option, editor);
-		setContent(mainLayout);
+        option.addComponent(generateBarChart());
+
+        VerticalLayout menuContent = new VerticalLayout();
+
+        Button pigButton = new Button("Pig", new ButtonListener("pig"));
+        pigButton.setPrimaryStyleName(MENU_BUTTON_STYLENAME);
+        menuContent.addComponent(pigButton);
+        menuContent.addComponent(new Button("Cat",
+                new ButtonListener("cat")));
+        menuContent.addComponent(new Button("Dog",
+                new ButtonListener("dog")));
+        menuContent.addComponent(new Button("Reindeer",
+                new ButtonListener("reindeer")));
+        menuContent.addComponent(new Button("Penguin",
+                new ButtonListener("penguin")));
+        menuContent.addComponent(new Button("Sheep",
+                new ButtonListener("sheep")));
+
+
+		VerticalLayout mainLayout = new VerticalLayout(menuContent, actions, option, editor);
+        HorizontalLayout main = new HorizontalLayout(menuContent, mainLayout);
+		setContent(main);
 
 		grid.setHeight(300, Unit.PIXELS);
+
+
 
 
         grid.addColumn(location -> location.getLatLon().getLat()).setCaption("Latitude").setId("latitude");
@@ -92,7 +136,7 @@ public class VaadinUI extends UI {
 
 		// Connect selected Customer to editor or hide if none is selected
 		grid.asSingleSelect().addValueChangeListener(e -> {
-		    option.addComponentsAndExpand(googleMap);
+		    option.addComponent(googleMap);
 		    Location currentLocation = e.getValue();
 		    if(currentLocation != null) {
                 String currentName = currentLocation.getName();
@@ -139,5 +183,50 @@ public class VaadinUI extends UI {
         }
     }
     // end::listCustomers[]
+
+
+    private ChartJs  generateBarChart() {
+        BarChartConfig config = new BarChartConfig();
+        config
+                .data()
+                .labels("January", "February", "March", "April", "May", "June", "July")
+                .addDataset(new BarDataset().type().label("Dataset 1").backgroundColor("rgba(151,187,205,0.5)").borderColor("white").borderWidth(2))
+                .addDataset(new LineDataset().type().label("Dataset 2").backgroundColor("rgba(151,187,205,0.5)").borderColor("white").borderWidth(2))
+                .addDataset(new BarDataset().type().label("Dataset 3").backgroundColor("rgba(220,220,220,0.5)"))
+                .and();
+
+        config.
+                options()
+                .responsive(true)
+                .title()
+                .display(true)
+                .position(Position.LEFT)
+                .text("Chart.js Combo Bar Line Chart")
+                .and()
+                .done();
+
+        List<String> labels = config.data().getLabels();
+        for (Dataset<?, ?> ds : config.data().getDatasets()) {
+            List<Double> data = new ArrayList<>();
+            for (int i = 0; i < labels.size(); i++) {
+                data.add((double) (Math.random() > 0.5 ? 1.0 : -1.0) * Math.round(Math.random() * 100));
+            }
+
+            if (ds instanceof BarDataset) {
+                BarDataset bds = (BarDataset) ds;
+                bds.dataAsList(data);
+            }
+
+            if (ds instanceof LineDataset) {
+                LineDataset lds = (LineDataset) ds;
+                lds.dataAsList(data);
+            }
+        }
+
+        ChartJs chart = new ChartJs(config);
+        chart.setJsLoggingEnabled(true);
+
+        return chart;
+    }
 
 }
