@@ -104,10 +104,10 @@ public class VaadinUI extends UI {
 
 
 
-        grid.addColumn(location -> location.getLatLon().getLat()).setCaption("Latitude").setId("latitude");
-        grid.addColumn(location -> location.getLatLon().getLon()).setCaption("Longitude").setId("longitude");
+      //  grid.addColumn(location -> location.getLatLon().getLat()).setCaption("Latitude").setId("latitude");
+      //  grid.addColumn(location -> location.getLatLon().getLon()).setCaption("Longitude").setId("longitude");
 
-		grid.setColumns("name", "latitude", "longitude");
+		grid.setColumns("name", "duration", "difficulty");
 
 		filter.setPlaceholder("Filter by name");
 
@@ -123,6 +123,7 @@ public class VaadinUI extends UI {
 				60.450403, 22.230399), false, null);
 		googleMap.setMinZoom(4);
 		googleMap.setMaxZoom(16);
+		googleMap.setZoom(16);
 		googleMap.setCenter(new LatLon(
                 60.450403, 22.230399));
 
@@ -133,9 +134,7 @@ public class VaadinUI extends UI {
         points.add(new LatLon(60.488224, 22.174602));
         points.add(new LatLon(60.486025, 22.169195));
 
-        GoogleMapPolyline overlay = new GoogleMapPolyline(
-                points, "#d31717", 0.8, 10);
-        googleMap.addPolyline(overlay);
+
 
 
 		// Replace listing with filtered content when user changes filter
@@ -149,9 +148,14 @@ public class VaadinUI extends UI {
 		    if(currentLocation != null) {
                 String currentName = currentLocation.getName();
                 LatLon currentLatLon = currentLocation.getLatLon();
+                ArrayList<LatLon> currentRoute = currentLocation.getRoute();
                 googleMap.setCenter(currentLatLon);
                 googleMap.clearMarkers();
                 googleMap.addMarker(currentName, currentLatLon, false, null);
+                GoogleMapPolyline currentOverlay = new GoogleMapPolyline(
+                        currentRoute, "#d31717", 0.8, 5);
+                googleMap.addPolyline(currentOverlay);
+
             }
 			editor.editLocation(e.getValue());
             addWindow(subWindow);
@@ -198,8 +202,8 @@ public class VaadinUI extends UI {
         BarChartConfig config = new BarChartConfig();
         config
                 .data()
-                .labels("January", "February", "March", "April", "May", "June", "July")
-                .addDataset(new LineDataset().type().label("Dataset 2"))
+                .labels("1km", "2km", "3km", "4km", "5km", "6km", "7km")
+                .addDataset(new LineDataset().type().label("Altitude"))
                 .and();
 
         config.
@@ -208,21 +212,24 @@ public class VaadinUI extends UI {
                 .title()
                 .display(true)
                 .position(Position.LEFT)
-                .text("Chart.js Combo Bar Line Chart")
+                .text("Changes in Altitude")
                 .and()
                 .done();
 
         List<String> labels = config.data().getLabels();
         for (Dataset<?, ?> ds : config.data().getDatasets()) {
             List<Double> data = new ArrayList<>();
-            for (int i = 0; i < labels.size(); i++) {
-                data.add((double) (Math.random() > 0.5 ? 1.0 : -1.0) * Math.round(Math.random() * 100));
-            }
+            data.add(1400.0);
+            data.add(1600.0);
+            data.add(1800.0);
+            data.add(2400.0);
+            data.add(2200.0);
+            data.add(1600.0);
+            data.add(1400.0);
 
-            if (ds instanceof BarDataset) {
-                BarDataset bds = (BarDataset) ds;
-                bds.dataAsList(data);
-            }
+
+
+
 
             if (ds instanceof LineDataset) {
                 LineDataset lds = (LineDataset) ds;
