@@ -1,0 +1,30 @@
+header {
+    background-color: black;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 40px;
+    font-style: normal;
+    height:50px;
+
+}
+
+body {
+      background: url('https://wallpapercave.com/wp/wp2392582.jpg') no-repeat fixed center center;
+      background-size: cover;
+      font-family: Montserrat;
+}
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: black;
+   color: white;
+}
