@@ -68,7 +68,7 @@ public class VaadinUI extends UI {
 		// build layout
 		HorizontalLayout actions = new HorizontalLayout(filter, addNewBtn);
         HorizontalLayout option = new HorizontalLayout(grid);
-        option.addComponent(generateBarChart());
+        //actions.addComponent(generateBarChart());
 
         VerticalLayout menuContent = new VerticalLayout();
 
@@ -85,6 +85,14 @@ public class VaadinUI extends UI {
                 new ButtonListener("penguin")));
         menuContent.addComponent(new Button("Sheep",
                 new ButtonListener("sheep")));
+
+
+        // ***  WINDOW  ***
+        Window subWindow = new Window("Sub-Window");
+        HorizontalLayout subContent = new HorizontalLayout(generateBarChart(), googleMap);
+        subWindow.setContent(subContent);
+        subWindow.center();
+
 
 
 		VerticalLayout mainLayout = new VerticalLayout(menuContent, actions, option, editor);
@@ -136,7 +144,7 @@ public class VaadinUI extends UI {
 
 		// Connect selected Customer to editor or hide if none is selected
 		grid.asSingleSelect().addValueChangeListener(e -> {
-		    option.addComponent(googleMap);
+		    //option.addComponent(googleMap);
 		    Location currentLocation = e.getValue();
 		    if(currentLocation != null) {
                 String currentName = currentLocation.getName();
@@ -146,6 +154,7 @@ public class VaadinUI extends UI {
                 googleMap.addMarker(currentName, currentLatLon, false, null);
             }
 			editor.editLocation(e.getValue());
+            addWindow(subWindow);
 		});
 
 		// Instantiate and edit new Customer the new button is clicked
@@ -190,9 +199,7 @@ public class VaadinUI extends UI {
         config
                 .data()
                 .labels("January", "February", "March", "April", "May", "June", "July")
-                .addDataset(new BarDataset().type().label("Dataset 1").backgroundColor("rgba(151,187,205,0.5)").borderColor("white").borderWidth(2))
-                .addDataset(new LineDataset().type().label("Dataset 2").backgroundColor("rgba(151,187,205,0.5)").borderColor("white").borderWidth(2))
-                .addDataset(new BarDataset().type().label("Dataset 3").backgroundColor("rgba(220,220,220,0.5)"))
+                .addDataset(new LineDataset().type().label("Dataset 2"))
                 .and();
 
         config.
@@ -224,6 +231,7 @@ public class VaadinUI extends UI {
         }
 
         ChartJs chart = new ChartJs(config);
+        chart.setWidth(600, Unit.PIXELS);
         chart.setJsLoggingEnabled(true);
 
         return chart;
