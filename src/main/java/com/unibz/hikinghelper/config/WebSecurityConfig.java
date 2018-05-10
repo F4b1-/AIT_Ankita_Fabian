@@ -34,13 +34,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
         http
                 .authorizeRequests()
-                .antMatchers("/exist/**", "/addUser", "/registration", "/css/**", "/js/**").permitAll()
+                .antMatchers("/exist/**", "/addUser", "/registration", "/css/**", "/js/**", "/static/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/login")
                 .successHandler((req,res,auth)->{    //Success handler invoked after successful authentication
-
                     res.sendRedirect("/application"); // Redirect user to index/home page
                 })
                 .permitAll()
