@@ -26,7 +26,6 @@
 //$v-friendly-color: #2c9720;
 //$v-error-indicator-color: #ed473b;
 
-$app-background-image: url('application_background.jpg') no-repeat fixed center center;
 
 // For more information, see: https://vaadin.com/book/-/page/themes.valo.html
 // Example variants can be copy/pasted from https://vaadin.com/wiki/-/wiki/Main/Valo+Examples
@@ -41,6 +40,11 @@ $app-background-image: url('application_background.jpg') no-repeat fixed center 
   /* An actual theme rule */
   .v-button {
     color: orangered;
+  }
+
+  .background_image {
+    background: url('application_background.jpg') no-repeat fixed center center;
+    background-size: cover;
   }
 
 }

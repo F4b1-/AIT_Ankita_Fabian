@@ -27,6 +27,7 @@ import java.util.List;
 @SpringUI(path = "/application")
 public class VaadinUI extends UI {
 
+
     // Menu navigation button listener
     class ButtonListener implements Button.ClickListener {
         String menuitem;
@@ -62,6 +63,7 @@ public class VaadinUI extends UI {
 		this.grid = new Grid<>(Location.class);
 		this.filter = new TextField();
 		this.addNewBtn = new Button("New Location", FontAwesome.PLUS);
+        setStyleName("background_image");
 	}
 
 	@Override
@@ -70,22 +72,6 @@ public class VaadinUI extends UI {
 		HorizontalLayout actions = new HorizontalLayout(filter, addNewBtn);
         HorizontalLayout option = new HorizontalLayout(grid);
         //actions.addComponent(generateBarChart());
-
-        VerticalLayout menuContent = new VerticalLayout();
-
-        Button pigButton = new Button("Pig", new ButtonListener("pig"));
-        pigButton.setPrimaryStyleName(MENU_BUTTON_STYLENAME);
-        menuContent.addComponent(pigButton);
-        menuContent.addComponent(new Button("Cat",
-                new ButtonListener("cat")));
-        menuContent.addComponent(new Button("Dog",
-                new ButtonListener("dog")));
-        menuContent.addComponent(new Button("Reindeer",
-                new ButtonListener("reindeer")));
-        menuContent.addComponent(new Button("Penguin",
-                new ButtonListener("penguin")));
-        menuContent.addComponent(new Button("Sheep",
-                new ButtonListener("sheep")));
 
 
         // ***  WINDOW  ***
@@ -96,8 +82,8 @@ public class VaadinUI extends UI {
 
 
 
-		VerticalLayout mainLayout = new VerticalLayout(menuContent, actions, option, editor);
-        HorizontalLayout main = new HorizontalLayout(menuContent, mainLayout);
+		VerticalLayout mainLayout = new VerticalLayout(actions, option, editor);
+        HorizontalLayout main = new HorizontalLayout(mainLayout);
 		setContent(main);
 
 		grid.setHeight(300, Unit.PIXELS);
