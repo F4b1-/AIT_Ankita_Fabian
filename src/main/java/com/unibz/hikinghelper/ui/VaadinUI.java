@@ -23,6 +23,7 @@ import com.byteowls.vaadin.chartjs.ChartJs;
 import java.util.ArrayList;
 import java.util.List;
 
+@Theme("mytheme")
 @SpringUI(path = "/application")
 public class VaadinUI extends UI {
 

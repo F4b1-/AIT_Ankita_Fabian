@@ -80,12 +80,12 @@ public class Application  implements WebMvcConfigurer {
 
 
             userDetailsService.saveUser("fabi", "test", "ADMIN");
-
+/*
             String elevationCall = "https://maps.googleapis.com/maps/api/elevation/json?locations=39.7391536,-104.9847034&key=AIzaSyAdXfqEgqkjkDBBFC2dRoWU_-dST-S34dk";
             RestTemplate restTemplate = new RestTemplate();
 
             Elevation elevation = restTemplate.getForObject(elevationCall, Elevation.class);
-            log.info(elevation.getResults().get(0).getElevation());
+            log.info(elevation.getResults().get(0).getElevation()); */
 
 		};
 	}
