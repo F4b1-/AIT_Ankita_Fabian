@@ -31,25 +31,24 @@ public class ElevationHelper {
     private static final Logger log = LoggerFactory.getLogger(ElevationHelper.class);
 
 
-    public void generateElevationDataForLocation(Location location) {
+    public Location generateElevationDataForLocation(Location location) {
         ArrayList<LatLon> route = location.getRoute();
         ArrayList<Double> elevationPoints = new ArrayList<Double>();
         for (LatLon latLon : route) {
-            elevationPoints.add(Double.valueOf(getAltitute(latLon)));
+            elevationPoints.add(Double.valueOf(getAltitude(latLon)));
         }
 
         location.setElevationPoints(elevationPoints);
 
-        this.repository.save(location);
+        return this.repository.save(location);
 
     }
 
 
-    private String getAltitute(LatLon latLon) {
+    private String getAltitude(LatLon latLon) {
         String singleAltitude = "";
         String elevationCall = "https://maps.googleapis.com/maps/api/elevation/json?locations=" + latLon.getLat() + "," + latLon.getLon() + "&key=AIzaSyAdXfqEgqkjkDBBFC2dRoWU_-dST-S34dk";
         RestTemplate restTemplate = new RestTemplate();
-
         Elevation elevation = restTemplate.getForObject(elevationCall, Elevation.class);
         if (elevation != null) {
             List<Results> results = elevation.getResults();

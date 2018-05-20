@@ -5,32 +5,25 @@ import com.byteowls.vaadin.chartjs.config.BarChartConfig;
 import com.byteowls.vaadin.chartjs.data.Dataset;
 import com.byteowls.vaadin.chartjs.data.LineDataset;
 import com.byteowls.vaadin.chartjs.options.Position;
+import com.unibz.hikinghelper.Constants.Constants;
 import com.unibz.hikinghelper.Location;
-import com.unibz.hikinghelper.LocationRepository;
 import com.unibz.hikinghelper.util.ElevationHelper;
-import com.vaadin.data.Binder;
-import com.vaadin.data.ValueProvider;
-import com.vaadin.event.ShortcutAction;
-import com.vaadin.icons.VaadinIcons;
-import com.vaadin.server.Setter;
+import com.unibz.hikinghelper.util.Utils;
 import com.vaadin.server.VaadinService;
-import com.vaadin.spring.annotation.SpringComponent;
-import com.vaadin.spring.annotation.SpringUI;
 import com.vaadin.spring.annotation.UIScope;
 import com.vaadin.tapio.googlemaps.GoogleMap;
 import com.vaadin.tapio.googlemaps.client.LatLon;
 import com.vaadin.tapio.googlemaps.client.overlays.GoogleMapPolyline;
 import com.vaadin.ui.*;
 import com.vaadin.ui.themes.ValoTheme;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.security.core.GrantedAuthority;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 
 @UIScope
-@SpringUI
 public class DetailWindow extends Window {
 
     private Location location;
@@ -39,12 +32,13 @@ public class DetailWindow extends Window {
     private Label labelDuration;
     private Label labelDifficulty;
 
-    @Autowired
-    ElevationHelper elevationHelper;
+    private ChartJs chart;
 
-    public DetailWindow(Location location) {
+
+    public DetailWindow(Location location, ElevationHelper elevationHelper, Collection<GrantedAuthority> authorities) {
         super("Details");
         this.location = location;
+
 
         labelName = new Label(location.getName());
         labelDuration = new Label(String.valueOf(location.getDuration().toHours()));
@@ -57,21 +51,45 @@ public class DetailWindow extends Window {
                         .setAttribute("hey", "button was pressed"));
 
 
-        Button elevationButton = new Button("Calculate altitude");
-        elevationButton.addClickListener(clickEvent -> elevationHelper.generateElevationDataForLocation(location));
+        VerticalLayout infoLayout = new VerticalLayout(labelName, labelDuration, labelDifficulty, favButton);
+        if (Utils.hasRole(Constants.ROLE_ADMIN, authorities)) {
+            Button elevationButton = new Button("Calculate altitude");
+            elevationButton.addClickListener(clickEvent -> {
+                Location updatedLocation = elevationHelper.generateElevationDataForLocation(location);
+                this.location = updatedLocation;
 
-        VerticalLayout infoLayout = new VerticalLayout(labelName, labelDuration, labelDifficulty, favButton, elevationButton);
-        HorizontalLayout subContent = new HorizontalLayout(infoLayout, generateGoogleMap(), generateBarChart());
+                chart.configure(generateBarConfig());
+                chart.update();
+
+            });
+            infoLayout.addComponent(elevationButton);
+        }
+
+        chart = generateBarChart();
+        HorizontalLayout subContent = new HorizontalLayout(infoLayout, generateGoogleMap(), chart);
         setContent(subContent);
         center();
+
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
     }
 
 
     private ChartJs generateBarChart() {
+        ChartJs chart = new ChartJs(generateBarConfig());
+        chart.setWidth(600, Unit.PIXELS);
+        chart.setJsLoggingEnabled(true);
+
+        return chart;
+    }
+
+    private BarChartConfig generateBarConfig() {
         ArrayList<Double> elevationPoints = location.getElevationPoints();
         String[] labelsMarks = new String[elevationPoints.size()];
-        for(int i=0; i < elevationPoints.size(); i++) {
-            labelsMarks[i] = String.valueOf(i) + ". mark";
+        for (int i = 0; i < elevationPoints.size(); i++) {
+            labelsMarks[i] = String.valueOf(i + 1) + ". mark";
         }
 
         BarChartConfig config = new BarChartConfig();
@@ -87,13 +105,12 @@ public class DetailWindow extends Window {
                 .title()
                 .display(true)
                 .position(Position.LEFT)
-                .text("Changes in Altitude")
+                .text("Altitude in meters")
                 .and()
                 .done();
 
         List<String> labels = config.data().getLabels();
         for (Dataset<?, ?> ds : config.data().getDatasets()) {
-
 
 
             if (ds instanceof LineDataset) {
@@ -102,12 +119,9 @@ public class DetailWindow extends Window {
             }
         }
 
-        ChartJs chart = new ChartJs(config);
-        chart.setWidth(600, Unit.PIXELS);
-        chart.setJsLoggingEnabled(true);
-
-        return chart;
+        return config;
     }
+
 
     private GoogleMap generateGoogleMap() {
         GoogleMap googleMap = new GoogleMap("AIzaSyAdXfqEgqkjkDBBFC2dRoWU_-dST-S34dk", null, "english");
