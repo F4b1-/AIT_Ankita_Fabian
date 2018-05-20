@@ -22,6 +22,7 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -52,6 +53,18 @@ public class IndexController {
         }
 
 
+    }
+
+    @RequestMapping("/cart")
+    public String cart(HttpSession session) {
+        session.setAttribute("hey", "jajajaj");
+        return "schau mer mal";
+    }
+
+    @RequestMapping("/cart2")
+    public String cart2(HttpSession session) {
+        String s = (String) session.getAttribute("hey");
+        return s;
     }
 
     @RequestMapping("/login")

@@ -15050,10 +15050,6 @@ div.v-layout.v-horizontal.v-widget {
 	overflow: hidden;
 }
 
-.mytheme .v-button {
-	color: orangered;
-}
-
 .mytheme .background_image {
 	background: url('application_background.jpg') no-repeat fixed center center;
 	background-size: cover;

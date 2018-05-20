@@ -11,15 +11,23 @@ import com.vaadin.annotations.Theme;
 import com.vaadin.navigator.Navigator;
 import com.vaadin.server.FontAwesome;
 import com.vaadin.server.VaadinRequest;
+import com.vaadin.server.VaadinService;
 import com.vaadin.shared.ui.ValueChangeMode;
 import com.vaadin.spring.annotation.SpringUI;
 import com.vaadin.tapio.googlemaps.client.LatLon;
 import com.vaadin.tapio.googlemaps.client.overlays.GoogleMapPolyline;
 import com.vaadin.ui.*;
+import com.vaadin.ui.themes.ValoTheme;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.util.StringUtils;
 import com.vaadin.tapio.googlemaps.GoogleMap;
 import com.byteowls.vaadin.chartjs.ChartJs;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,6 +64,9 @@ public class VaadinUI extends UI {
 
 	private final static String MENU_BUTTON_STYLENAME = "menu_button";
 
+	@Autowired
+	HttpSession session;
+
 
     public VaadinUI(LocationRepository repo, LocationEditor editor) {
 		this.repo = repo;
@@ -74,9 +85,26 @@ public class VaadinUI extends UI {
         //actions.addComponent(generateBarChart());
 
 
+
+        //this.getSession().setAttribute("hey", "123");
+
+
+
         // ***  WINDOW  ***
         Window subWindow = new Window("Sub-Window");
-        HorizontalLayout subContent = new HorizontalLayout(generateBarChart(), googleMap);
+
+        Label labelName = new Label("");
+        Label labelDuration = new Label("");
+        Label labelDifficulty = new Label("");
+
+        Button favButton = new Button("Add to favorites");
+        favButton.addStyleName(ValoTheme.BUTTON_FRIENDLY);
+        favButton.addClickListener(clickEvent ->
+                VaadinService.getCurrentRequest().getWrappedSession()
+                        .setAttribute("hey", "button was pressed"));
+
+        VerticalLayout infoLayout = new VerticalLayout(labelName, labelDuration, labelDifficulty, favButton);
+        HorizontalLayout subContent = new HorizontalLayout(infoLayout, googleMap, generateBarChart());
         subWindow.setContent(subContent);
         subWindow.center();
 
@@ -88,17 +116,12 @@ public class VaadinUI extends UI {
 
 		grid.setHeight(300, Unit.PIXELS);
 
-
-
-
-      //  grid.addColumn(location -> location.getLatLon().getLat()).setCaption("Latitude").setId("latitude");
+        //grid.addColumn(location -> location.getDuration()).setCaption("Duration");
       //  grid.addColumn(location -> location.getLatLon().getLon()).setCaption("Longitude").setId("longitude");
 
-		grid.setColumns("name", "duration", "difficulty");
+		grid.setColumns("name", "difficulty", "duration");
 
 		filter.setPlaceholder("Filter by name");
-
-
 
 		googleMap.setSizeFull();
 
@@ -122,8 +145,6 @@ public class VaadinUI extends UI {
         points.add(new LatLon(60.486025, 22.169195));
 
 
-
-
 		// Replace listing with filtered content when user changes filter
 		filter.setValueChangeMode(ValueChangeMode.LAZY);
 		filter.addValueChangeListener(e -> listLocations(e.getValue()));
@@ -142,6 +163,10 @@ public class VaadinUI extends UI {
                 GoogleMapPolyline currentOverlay = new GoogleMapPolyline(
                         currentRoute, "#d31717", 0.8, 5);
                 googleMap.addPolyline(currentOverlay);
+                //VaadinService.getCurrentRequest().getWrappedSession().getAttribute("hey").toString()
+                labelName.setValue(e.getValue().getName());
+                labelDuration.setValue(e.getValue().getDuration().toString());
+                labelDifficulty.setValue(e.getValue().getDifficulty().toString());
 
             }
 			editor.editLocation(e.getValue());
