@@ -21,7 +21,9 @@ public class Location {
 
 	public Duration duration;
 
-    ArrayList<LatLon> route;
+    public ArrayList<LatLon> route;
+
+    public ArrayList<Double> elevationPoints;
 
     public Location() {
     }
@@ -31,12 +33,13 @@ public class Location {
 		this.latLon = latLon;
 	}
 
-    public Location(String name, LatLon latLon, Difficulty difficulty, Duration duration, ArrayList<LatLon> route) {
+    public Location(String name, LatLon latLon, Difficulty difficulty, Duration duration, ArrayList<LatLon> route, ArrayList<Double> elevationPoints) {
         this.name = name;
         this.latLon = latLon;
         this.difficulty = difficulty;
         this.duration = duration;
         this.route = route;
+        this.elevationPoints = elevationPoints;
     }
 
     public String getId() {
@@ -83,6 +86,15 @@ public class Location {
 
     public void setRoute(ArrayList<LatLon> route) {
         this.route = route;
+    }
+
+
+    public ArrayList<Double> getElevationPoints() {
+        return elevationPoints;
+    }
+
+    public void setElevationPoints(ArrayList<Double> elevationPoints) {
+        this.elevationPoints = elevationPoints;
     }
 
     @Override
