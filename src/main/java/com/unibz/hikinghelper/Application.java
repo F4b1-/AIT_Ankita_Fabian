@@ -75,7 +75,7 @@ public class Application  implements WebMvcConfigurer {
             points.add(new LatLon(48.270, 8.651));
             points.add(new LatLon(48.2751726, 8.6505911));
 
-            repository.save(new Location("Bonn", new LatLon(50.73743, 7.0982068)));
+            repository.save(new Location("Bonn", new LatLon(50.73743, 7.0982068), Difficulty.MEDIUM, Duration.ofHours(1), new ArrayList<LatLon>(), new ArrayList<Double>()));
             repository.save(new Location("Trichtingen", new LatLon(48.2751726, 8.6505911), Difficulty.EASY, Duration.ofHours(1), points, new ArrayList<Double>()));
 
 
