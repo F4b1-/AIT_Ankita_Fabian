@@ -71,17 +71,39 @@ public class VaadinUI extends UI {
 
     @Override
     protected void init(VaadinRequest request) {
+    	
+    	Label title = new Label("Menu");
+		title.addStyleName(ValoTheme.MENU_TITLE);
+
+		Button view1 = new Button("Home", e -> getNavigator().navigateTo("view1"));
+		view1.addStyleNames(ValoTheme.BUTTON_LINK, ValoTheme.MENU_ITEM);
+		Button view2 = new Button("Shopping Cart", e -> getNavigator().navigateTo("view2"));
+		view2.addStyleNames(ValoTheme.BUTTON_LINK, ValoTheme.MENU_ITEM);
+		Button view3 = new Button("About Us", e -> getNavigator().navigateTo("view3"));
+		view3.addStyleNames(ValoTheme.BUTTON_LINK, ValoTheme.MENU_ITEM);
+
+		CssLayout menu = new CssLayout(title, view1, view2, view3);
+		menu.addStyleName(ValoTheme.MENU_ROOT);
+		
+
+		CssLayout viewContainer = new CssLayout();
+
+		Navigator navigator = new Navigator(this, viewContainer);
+		navigator.addView("", DefaultView.class);
+		navigator.addView("view1", View1.class);
+		navigator.addView("view2", View2.class);
+		navigator.addView("view3", View3.class);
 
         // build layout
         HorizontalLayout actions = new HorizontalLayout(filter, addNewBtn);
         HorizontalLayout option = new HorizontalLayout(grid);
 
-        VerticalLayout mainLayout = new VerticalLayout(actions, option, editor);
-
-
-
-        HorizontalLayout main = new HorizontalLayout(mainLayout);
-        setContent(main);
+        VerticalLayout mainLayout1 = new VerticalLayout(actions, option, editor);
+		HorizontalLayout main = new HorizontalLayout(menu, mainLayout1);
+		main.setExpandRatio(menu, 2);
+		main.setExpandRatio(mainLayout1, 8);
+		main.setSizeFull();
+		setContent(main);
         grid.setHeight(300, Unit.PIXELS);
 
         //grid.addColumn(location -> location.getDuration()).setCaption("Duration");

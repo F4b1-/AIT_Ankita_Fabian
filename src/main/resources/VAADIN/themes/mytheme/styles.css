@@ -15051,6 +15051,6 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .mytheme .background_image {
-	background: url('application_background.jpg') no-repeat fixed center center;
+	background: url('scene.png') no-repeat fixed center;
 	background-size: cover;
 }

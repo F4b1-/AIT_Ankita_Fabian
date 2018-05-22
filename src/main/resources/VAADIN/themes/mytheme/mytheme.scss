@@ -1,5 +1,5 @@
 // If you edit this file you need to compile the theme. See README.md for details.
-
+// mvn vaadin:compile-theme
 // Global variable overrides. Must be declared before importing Valo.
 
 // Defines the plaintext font size, weight and family. Font size affects general component sizing.
@@ -43,9 +43,11 @@
   }
 
   .background_image {
-    background: url('application_background.jpg') no-repeat fixed center center;
+    background: url('scene.png') no-repeat fixed center;
     background-size: cover;
   }
+
+  
 
 
 }
