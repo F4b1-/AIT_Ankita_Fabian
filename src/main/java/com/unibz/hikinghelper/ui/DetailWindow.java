@@ -17,6 +17,7 @@ import com.vaadin.tapio.googlemaps.client.overlays.GoogleMapPolyline;
 import com.vaadin.ui.*;
 import com.vaadin.ui.themes.ValoTheme;
 import org.springframework.security.core.GrantedAuthority;
+import sun.management.counter.Units;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -66,7 +67,11 @@ public class DetailWindow extends Window {
         }
 
         chart = generateBarChart();
-        HorizontalLayout subContent = new HorizontalLayout(infoLayout, generateGoogleMap(), chart);
+
+        HorizontalLayout infoContent = new HorizontalLayout(infoLayout, chart);
+        HorizontalLayout mapContent = new HorizontalLayout(generateGoogleMap());
+        mapContent.setWidth(100, Unit.PERCENTAGE);
+        VerticalLayout subContent = new VerticalLayout(infoContent, mapContent);
         setContent(subContent);
         center();
 
@@ -96,7 +101,7 @@ public class DetailWindow extends Window {
         config
                 .data()
                 .labels(labelsMarks)
-                .addDataset(new LineDataset().type().label("Altitude"))
+                .addDataset(new LineDataset().type().label("Altitude").backgroundColor("rgba(46, 215, 245, 0.35)"))
                 .and();
 
         config.
@@ -124,15 +129,12 @@ public class DetailWindow extends Window {
 
 
     private GoogleMap generateGoogleMap() {
-        GoogleMap googleMap = new GoogleMap("AIzaSyAdXfqEgqkjkDBBFC2dRoWU_-dST-S34dk", null, "english");
+        GoogleMap googleMap = new GoogleMap(Constants.GOOGLE_API_KEY, null, "english");
         googleMap.setSizeFull();
-
-        googleMap.setHeight(300, Unit.PIXELS);
-        googleMap.setWidth(300, Unit.PIXELS);
 
         googleMap.setMinZoom(4);
         googleMap.setMaxZoom(16);
-        googleMap.setZoom(16);
+        googleMap.setZoom(14);
         googleMap.setCenter(new LatLon(
                 60.450403, 22.230399));
 

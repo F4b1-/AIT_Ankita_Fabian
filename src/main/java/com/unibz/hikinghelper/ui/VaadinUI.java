@@ -75,24 +75,15 @@ public class VaadinUI extends UI {
     	Label title = new Label("Menu");
 		title.addStyleName(ValoTheme.MENU_TITLE);
 
-		Button view1 = new Button("Home", e -> getNavigator().navigateTo("view1"));
+		Button view1 = new Button("Home"/*, e -> getNavigator().navigateTo("view1")*/);
 		view1.addStyleNames(ValoTheme.BUTTON_LINK, ValoTheme.MENU_ITEM);
-		Button view2 = new Button("Shopping Cart", e -> getNavigator().navigateTo("view2"));
+		Button view2 = new Button("Shopping Cart"/*, e -> getNavigator().navigateTo("view2"))*/);
 		view2.addStyleNames(ValoTheme.BUTTON_LINK, ValoTheme.MENU_ITEM);
-		Button view3 = new Button("About Us", e -> getNavigator().navigateTo("view3"));
+		Button view3 = new Button("About Us"/*, e -> getNavigator().navigateTo("view3"))*/);
 		view3.addStyleNames(ValoTheme.BUTTON_LINK, ValoTheme.MENU_ITEM);
 
 		CssLayout menu = new CssLayout(title, view1, view2, view3);
 		menu.addStyleName(ValoTheme.MENU_ROOT);
-		
-
-		CssLayout viewContainer = new CssLayout();
-
-		Navigator navigator = new Navigator(this, viewContainer);
-		navigator.addView("", DefaultView.class);
-		navigator.addView("view1", View1.class);
-		navigator.addView("view2", View2.class);
-		navigator.addView("view3", View3.class);
 
         // build layout
         HorizontalLayout actions = new HorizontalLayout(filter, addNewBtn);

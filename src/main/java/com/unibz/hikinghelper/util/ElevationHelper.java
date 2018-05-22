@@ -1,6 +1,7 @@
 package com.unibz.hikinghelper.util;
 
 import com.unibz.hikinghelper.Application;
+import com.unibz.hikinghelper.Constants.Constants;
 import com.unibz.hikinghelper.Location;
 import com.unibz.hikinghelper.LocationRepository;
 import com.unibz.hikinghelper.model.Elevation;
@@ -47,7 +48,7 @@ public class ElevationHelper {
 
     private String getAltitude(LatLon latLon) {
         String singleAltitude = "";
-        String elevationCall = "https://maps.googleapis.com/maps/api/elevation/json?locations=" + latLon.getLat() + "," + latLon.getLon() + "&key=AIzaSyAdXfqEgqkjkDBBFC2dRoWU_-dST-S34dk";
+        String elevationCall = "https://maps.googleapis.com/maps/api/elevation/json?locations=" + latLon.getLat() + "," + latLon.getLon() + "&key=" + Constants.GOOGLE_API_KEY;
         RestTemplate restTemplate = new RestTemplate();
         Elevation elevation = restTemplate.getForObject(elevationCall, Elevation.class);
         if (elevation != null) {
