@@ -59,7 +59,7 @@ public class IndexController {
 
     @RequestMapping("/cart2")
     public String cart2(HttpSession session) {
-        String s = (String) session.getAttribute("hey");
+        String s = (String) session.getAttribute("favorites");
         return s;
     }
 

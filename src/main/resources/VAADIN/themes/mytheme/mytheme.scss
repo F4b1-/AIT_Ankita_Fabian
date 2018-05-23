@@ -47,7 +47,20 @@
     background-size: cover;
   }
 
-  
+  .v-nativebutton {
+    height: 37px;
+    padding: 0 16px;
+    color: #eaf4e9;
+    font-weight: 400;
+    border-radius: 4px;
+    border: 1px solid #227719;
+    border-top-color: rgb(34, 119, 25);
+    border-bottom-color: rgb(34, 119, 25);
+    border-top-color: #257d1a;
+    border-bottom-color: #1e6b15;
+    background-color: #2c9720;
+    cursor: pointer;
+  }
 
 
 }

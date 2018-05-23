@@ -10,6 +10,7 @@ import com.unibz.hikinghelper.Location;
 import com.unibz.hikinghelper.util.ElevationHelper;
 import com.unibz.hikinghelper.util.Utils;
 import com.vaadin.server.VaadinService;
+import com.vaadin.server.WrappedSession;
 import com.vaadin.spring.annotation.UIScope;
 import com.vaadin.tapio.googlemaps.GoogleMap;
 import com.vaadin.tapio.googlemaps.client.LatLon;
@@ -47,9 +48,15 @@ public class DetailWindow extends Window {
 
         Button favButton = new Button("Add to favorites");
         favButton.addStyleName(ValoTheme.BUTTON_FRIENDLY);
-        favButton.addClickListener(clickEvent ->
-                VaadinService.getCurrentRequest().getWrappedSession()
-                        .setAttribute("hey", "button was pressed"));
+        favButton.addClickListener(clickEvent -> {
+            WrappedSession wrappedSession = VaadinService.getCurrentRequest().getWrappedSession();
+            ArrayList<Location> favorites= (ArrayList<Location>) wrappedSession.getAttribute("favorites");
+            if(favorites == null) {
+                favorites = new ArrayList<>();
+            }
+            favorites.add(location);
+            wrappedSession.setAttribute("favorites", favorites);
+        });
 
 
         VerticalLayout infoLayout = new VerticalLayout(labelName, labelDuration, labelDifficulty, favButton);
