@@ -1,17 +1,17 @@
 package com.unibz.hikinghelper.ui;
 
+import com.unibz.hikinghelper.Constants.Constants;
 import com.unibz.hikinghelper.Location;
 import com.unibz.hikinghelper.LocationRepository;
+import com.unibz.hikinghelper.util.DownloadFileCreator;
 import com.unibz.hikinghelper.util.ElevationHelper;
 import com.unibz.hikinghelper.util.UIHelper;
 import com.vaadin.annotations.Theme;
-import com.vaadin.server.FontAwesome;
-import com.vaadin.server.VaadinRequest;
-import com.vaadin.server.VaadinService;
-import com.vaadin.server.WrappedSession;
+import com.vaadin.server.*;
 import com.vaadin.spring.annotation.SpringUI;
 import com.vaadin.ui.*;
 import com.vaadin.ui.renderers.ButtonRenderer;
+import com.vaadin.ui.renderers.ComponentRenderer;
 import com.vaadin.ui.themes.ValoTheme;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -54,8 +54,12 @@ public class FavoritesUI extends UI {
 
         ComboBox<String> formatComboBox = new ComboBox<>("Desired download format");
         formatComboBox.setEmptySelectionAllowed(false);
-        formatComboBox.setItems("gpx", "csv");
+        formatComboBox.setItems(Constants.GPX_FILE, Constants.CSV_FILE);
         formatComboBox.setSelectedItem("gpx");
+
+        formatComboBox.addValueChangeListener(event -> {
+            grid.clearSortOrder();
+        });
 
 
         VerticalLayout gridLayout = new VerticalLayout(formatComboBox, grid);
@@ -67,8 +71,19 @@ public class FavoritesUI extends UI {
 
         grid.setColumns("name", "difficulty", "duration");
 
-        grid.addColumn(location -> "Download",
-                new ButtonRenderer(ValoTheme.BUTTON_FRIENDLY));
+
+        grid.addColumn(
+                location -> {
+                    StreamResource myResource = DownloadFileCreator.createFileLocation(location, formatComboBox.getValue());
+                    FileDownloader fileDownloader = new FileDownloader(myResource);
+                    Button downloadButton = new Button(Constants.DOWNLOAD_BUTTON );
+                    downloadButton.addStyleName(ValoTheme.BUTTON_FRIENDLY);
+                    fileDownloader.extend(downloadButton);
+                    return downloadButton;
+
+                } ,
+                new ComponentRenderer()
+        ).setCaption( Constants.DOWNLOAD_BUTTON );
 
         // Initialize listing
         WrappedSession wrappedSession = VaadinService.getCurrentRequest().getWrappedSession();

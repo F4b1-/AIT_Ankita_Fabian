@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44f1297c-4ff7-4d56-8769-dcbfe1824930" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/MainUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/util/UIHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/util/DownloadFileCreator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/DefaultView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/DetailWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/DetailWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/VaadinUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/FavoritesUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/VAADIN/themes/mytheme/mytheme.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/VAADIN/themes/mytheme/mytheme.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/VAADIN/themes/mytheme/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/VAADIN/themes/mytheme/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/Constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/Constants/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/FavoritesUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/FavoritesUI.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,11 +18,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="IndexController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/IndexController.java">
+      <file leaf-file-name="MainUI.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/MainUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-137">
-              <caret line="61" column="59" selection-start-line="61" selection-start-column="59" selection-end-line="61" selection-end-column="59" />
+            <state relative-caret-position="241">
+              <caret line="100" column="93" lean-forward="true" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="93" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FavoritesUI.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/FavoritesUI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="316">
+              <caret line="60" column="34" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -34,29 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainUI.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/MainUI.java">
+      <file leaf-file-name="Constants.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/Constants/Constants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="56" column="52" selection-start-line="56" selection-start-column="52" selection-end-line="56" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FavoritesUI.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/FavoritesUI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="49" column="52" selection-start-line="49" selection-start-column="52" selection-end-line="49" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Utils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/util/Utils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+            <state relative-caret-position="240">
+              <caret line="16" column="31" lean-forward="true" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -70,14 +57,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ElevationHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/util/ElevationHelper.java">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="43" column="46" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="506">
+              <caret line="114" selection-start-line="114" selection-end-line="114" />
             </state>
           </provider>
         </entry>
@@ -85,7 +69,7 @@
       <file leaf-file-name="ButtonRenderer.java" pinned="false" current-in-tab="false">
         <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-server/8.3.1/vaadin-server-8.3.1-sources.jar!/com/vaadin/ui/renderers/ButtonRenderer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="315">
               <caret line="35" column="11" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
               <folding>
                 <element signature="e#1257#1258#0" expanded="true" />
@@ -95,20 +79,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+      <file leaf-file-name="DownloadFileCreator.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/util/DownloadFileCreator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-47">
-              <caret line="141" column="21" selection-start-line="141" selection-start-column="21" selection-end-line="141" selection-end-column="21" />
+            <state relative-caret-position="501">
+              <caret line="54" column="15" selection-end-line="73" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UIHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/util/UIHelper.java">
+      <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="446">
-              <caret line="31" column="82" selection-start-line="31" selection-start-column="82" selection-end-line="31" selection-end-column="82" />
+            <state relative-caret-position="271">
+              <caret line="71" selection-start-line="71" selection-end-line="71" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -119,8 +106,8 @@
       <file leaf-file-name="DetailWindow.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/DetailWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="50" column="1" selection-start-line="50" selection-start-column="1" selection-end-line="58" selection-end-column="11" />
+            <state relative-caret-position="-619">
+              <caret line="48" column="58" selection-start-line="48" selection-start-column="58" selection-end-line="48" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -163,8 +150,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/VAADIN/themes/mytheme/styles.scss" />
-        <option value="$PROJECT_DIR$/src/static/index.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/TestingController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/MvcConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/Example.java" />
@@ -188,7 +173,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/js/register.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/model/Difficulty.java" />
         <option value="$PROJECT_DIR$/src/main/resources/VAADIN/themes/mytheme/styles.scss" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/LocationRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/Location.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/util/Utils.java" />
@@ -203,7 +187,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/config/AppInitializer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/config/WebSecurityConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/util/ElevationHelper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/Constants/Constants.java" />
         <option value="$PROJECT_DIR$/src/main/resources/public/error/404.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/Application.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/IndexController.java" />
@@ -213,7 +196,11 @@
         <option value="$PROJECT_DIR$/src/main/resources/VAADIN/themes/mytheme/mytheme.scss" />
         <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/util/UIHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/MainUI.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/LettingUserDownloadFile.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/Constants/Constants.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/FavoritesUI.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/util/DownloadFileCreator.java" />
       </list>
     </option>
   </component>
@@ -226,9 +213,9 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="70" />
-    <option name="y" value="163" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="86" />
+    <option name="y" value="63" />
     <option name="width" value="1730" />
     <option name="height" value="898" />
   </component>
@@ -240,7 +227,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -380,8 +368,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -579,15 +566,16 @@
       <workItem from="1526992848287" duration="4467000" />
       <workItem from="1526999888267" duration="8620000" />
       <workItem from="1527059771003" duration="47000" />
-      <workItem from="1527097655564" duration="6763000" />
+      <workItem from="1527097655564" duration="7035000" />
+      <workItem from="1527172688047" duration="8108000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174451000" />
+    <option name="totallyTimeSpent" value="182831000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="70" y="163" width="1730" height="898" extended-state="0" />
+    <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -595,31 +583,32 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="CDI" order="4" />
+      <window_info anchor="bottom" id="Dependency Viewer" weight="0.32939914" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info id="Structure" order="1" sideWeight="0.2347973" side_tool="true" visible="true" weight="0.34913296" />
+      <window_info id="Structure" order="1" sideWeight="0.2360515" side_tool="true" visible="true" weight="0.31458333" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.398773" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.2985843" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.2950644" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.23809524" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.19849785" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7652027" visible="true" weight="0.34913296" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7639485" visible="true" weight="0.31458333" />
       <window_info anchor="right" id="Bean Validation" order="3" />
       <window_info id="Web" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32971507" />
       <window_info anchor="right" id="Gradle" order="3" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32971507" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -639,34 +628,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.0.4.RELEASE/spring-security-core-5.0.4.RELEASE.jar!/org/springframework/security/core/userdetails/User.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="40" column="11" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.0.4.RELEASE/spring-security-core-5.0.4.RELEASE.jar!/org/springframework/security/provisioning/InMemoryUserDetailsManager.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="45" column="11" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.6.RELEASE/spring-data-commons-2.0.6.RELEASE-sources.jar!/org/springframework/data/repository/CrudRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/dao/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/js/register.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -828,23 +789,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/DefaultView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/DefaultView.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-server/8.3.1/vaadin-server-8.3.1-sources.jar!/com/vaadin/server/VaadinRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -869,13 +814,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/Constants/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/public/error/404.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-120">
@@ -885,7 +823,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/IndexController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-137">
+        <state relative-caret-position="615">
           <caret line="61" column="59" selection-start-line="61" selection-start-column="59" selection-end-line="61" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -900,24 +838,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-47">
-          <caret line="141" column="21" selection-start-line="141" selection-start-column="21" selection-end-line="141" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-server/8.3.1/vaadin-server-8.3.1-sources.jar!/com/vaadin/ui/renderers/ButtonRenderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="35" column="11" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
-          <folding>
-            <element signature="e#1257#1258#0" expanded="true" />
-            <element signature="e#1312#1313#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/util/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -925,12 +845,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/util/ElevationHelper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/LettingUserDownloadFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="43" column="46" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
+        <state relative-caret-position="240">
+          <caret line="31" selection-start-line="31" selection-end-line="43" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/util/UIHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="82" selection-start-line="31" selection-start-column="82" selection-end-line="31" selection-end-column="82" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/jenetics/jpx/1.3.0/jpx-1.3.0.jar!/io/jenetics/jpx/GPX.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="242" column="23" selection-start-line="242" selection-start-column="23" selection-end-line="242" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/jenetics/jpx/1.3.0/jpx-1.3.0.jar!/io/jenetics/jpx/Track.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-124">
+          <caret line="306" column="29" selection-start-line="306" selection-start-column="29" selection-end-line="306" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/DetailWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-619">
+          <caret line="48" column="58" selection-start-line="48" selection-start-column="58" selection-end-line="48" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-server/8.3.1/vaadin-server-8.3.1-sources.jar!/com/vaadin/ui/renderers/ButtonRenderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="35" column="11" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
+          <folding>
+            <element signature="e#1257#1258#0" expanded="true" />
+            <element signature="e#1312#1313#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -942,17 +904,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/DetailWindow.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/util/ElevationHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="50" column="1" selection-start-line="50" selection-start-column="1" selection-end-line="58" selection-end-column="11" />
+        <state relative-caret-position="271">
+          <caret line="43" column="46" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/util/UIHelper.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="31" column="82" selection-start-line="31" selection-start-column="82" selection-end-line="31" selection-end-column="82" />
+        <state relative-caret-position="506">
+          <caret line="114" selection-start-line="114" selection-end-line="114" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/Constants/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="31" lean-forward="true" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="71" selection-start-line="71" selection-end-line="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/FavoritesUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="60" column="34" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -961,15 +950,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/MainUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="56" column="52" selection-start-line="56" selection-start-column="52" selection-end-line="56" selection-end-column="52" />
+        <state relative-caret-position="241">
+          <caret line="100" column="93" lean-forward="true" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="93" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/FavoritesUI.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/util/DownloadFileCreator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="49" column="52" selection-start-line="49" selection-start-column="52" selection-end-line="49" selection-end-column="52" />
+        <state relative-caret-position="501">
+          <caret line="54" column="15" selection-end-line="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
