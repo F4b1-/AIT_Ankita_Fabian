@@ -10,26 +10,23 @@ import com.vaadin.ui.themes.ValoTheme;
 public class UIHelper {
 
     public static CssLayout createMenuBar(UI ui) {
-        Label title = new Label("Menu");
-        title.addStyleName(ValoTheme.MENU_TITLE);
-
         Button homeButton = new Button("Home");
-        homeButton.addStyleNames(ValoTheme.BUTTON_LINK, ValoTheme.MENU_ITEM);
+        homeButton.addStyleNames(ValoTheme.BUTTON_LINK, ValoTheme.MENU_ITEM, "menuItem1");
         homeButton.addClickListener(clickEvent -> {
             ui.getPage().setLocation("/application");
         });
         Button favButton = new Button("Favorites");
-        favButton.addStyleNames(ValoTheme.BUTTON_LINK, ValoTheme.MENU_ITEM);
+        favButton.addStyleNames(ValoTheme.BUTTON_LINK, ValoTheme.MENU_ITEM, "menuItem2");
         favButton.addClickListener(clickEvent -> {
             ui.getPage().setLocation("/favorites");
         });
         Button aboutUsButton = new Button("About Us");
-        aboutUsButton.addStyleNames(ValoTheme.BUTTON_LINK, ValoTheme.MENU_ITEM);
+        aboutUsButton.addStyleNames(ValoTheme.BUTTON_LINK, ValoTheme.MENU_ITEM, "menuItem3");
         aboutUsButton.addClickListener(clickEvent -> {
             //ui.getPage().setLocation("/aboutUs");
         });
 
-        CssLayout menu = new CssLayout(title, homeButton, favButton, aboutUsButton);
+        CssLayout menu = new CssLayout(homeButton, favButton, aboutUsButton);
         menu.addStyleName(ValoTheme.MENU_ROOT);
         return menu;
 

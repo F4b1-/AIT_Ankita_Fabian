@@ -5,12 +5,17 @@ import com.unibz.hikinghelper.LocationRepository;
 import com.unibz.hikinghelper.util.ElevationHelper;
 import com.unibz.hikinghelper.util.UIHelper;
 import com.vaadin.annotations.Theme;
+import com.vaadin.navigator.Navigator;
+import com.vaadin.server.ExternalResource;
 import com.vaadin.server.FontAwesome;
+import com.vaadin.server.ThemeResource;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.shared.ui.ValueChangeMode;
 import com.vaadin.spring.annotation.SpringUI;
 import com.vaadin.tapio.googlemaps.client.LatLon;
 import com.vaadin.ui.*;
+import com.vaadin.ui.themes.ValoTheme;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,7 +58,7 @@ public class MainUI extends UI {
 
     @Override
     protected void init(VaadinRequest request) {
-
+    	
         CssLayout menu = UIHelper.createMenuBar(this);
         // build layout
         HorizontalLayout actions = new HorizontalLayout(filter, addNewBtn);
@@ -61,6 +66,14 @@ public class MainUI extends UI {
 
         VerticalLayout mainLayout1 = new VerticalLayout(actions, option, editor);
 		HorizontalLayout main = new HorizontalLayout(menu, mainLayout1);
+		Image image = new Image();
+    	image.setSource(new ThemeResource("logo.jpg")); 
+    	image.setWidth("160px");
+    	image.setHeight("80px");
+    	
+    	menu.addComponent(image);
+    	image.setStyleName("logoStyle");
+    	//menu.setComponentAlignment(image, Alignment.BOTTOM_LEFT);
 		main.setExpandRatio(menu, 2);
 		main.setExpandRatio(mainLayout1, 8);
 		main.setSizeFull();

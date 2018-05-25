@@ -15051,8 +15051,9 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .mytheme .background_image {
-	background: url('scene.png') no-repeat fixed center;
+	background: url('http://lucapisanu.epicend.com/wp-content/uploads/2014/04/03-1024x576.jpg') no-repeat fixed center;
 	background-size: cover;
+	font-family: "Lato";
 }
 
 .mytheme .v-nativebutton {
@@ -15068,4 +15069,30 @@ div.v-layout.v-horizontal.v-widget {
 	border-bottom-color: #1e6b15;
 	background-color: #2c9720;
 	cursor: pointer;
+}
+
+.mytheme .v-button.menuItem3 {
+	font-size: 15pt;
+	font-weight: bold;
+	text-align: left;
+	color: white;
+}
+
+.mytheme .v-button.menuItem1 {
+	font-size: 15pt;
+	font-weight: bold;
+	text-align: left;
+	color: white;
+}
+
+.mytheme .v-button.menuItem2 {
+	font-size: 15pt;
+	font-weight: bold;
+	text-align: left;
+	color: white;
+}
+
+.mytheme .logoStyle {
+	position: absolute;
+	bottom: 2;
 }
