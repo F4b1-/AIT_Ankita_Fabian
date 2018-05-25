@@ -1,6 +1,7 @@
 package com.unibz.hikinghelper.ui;
 
 import com.byteowls.vaadin.chartjs.ChartJs;
+import com.vaadin.icons.VaadinIcons;
 import com.byteowls.vaadin.chartjs.config.BarChartConfig;
 import com.byteowls.vaadin.chartjs.data.Dataset;
 import com.byteowls.vaadin.chartjs.data.LineDataset;
@@ -9,6 +10,7 @@ import com.unibz.hikinghelper.Constants.Constants;
 import com.unibz.hikinghelper.Location;
 import com.unibz.hikinghelper.util.ElevationHelper;
 import com.unibz.hikinghelper.util.Utils;
+import com.vaadin.server.Resource;
 import com.vaadin.server.VaadinService;
 import com.vaadin.server.WrappedSession;
 import com.vaadin.spring.annotation.UIScope;
@@ -23,6 +25,8 @@ import sun.management.counter.Units;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+
+import javax.swing.Icon;
 
 
 @UIScope
@@ -41,10 +45,13 @@ public class DetailWindow extends Window {
         super("Details");
         this.location = location;
 
-
+        
         labelName = new Label(location.getName());
+        labelName.setIcon(VaadinIcons.MAP_MARKER);
         labelDuration = new Label(String.valueOf(location.getDuration().toHours()));
+        labelDuration.setIcon(VaadinIcons.STOPWATCH);
         labelDifficulty = new Label(location.getDifficulty().toString());
+        labelDifficulty.setIcon(VaadinIcons.EXIT);
 
         Button favButton = new Button("Add to favorites");
         favButton.addStyleName(ValoTheme.BUTTON_FRIENDLY);
