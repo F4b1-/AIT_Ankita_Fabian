@@ -1,6 +1,7 @@
 package com.unibz.hikinghelper;
 
 import com.google.gwt.maps.client.services.ElevationResult;
+import com.unibz.hikinghelper.Constants.Constants;
 import com.unibz.hikinghelper.dao.UserRepository;
 import com.unibz.hikinghelper.model.Difficulty;
 import com.unibz.hikinghelper.model.Elevation;
@@ -76,10 +77,11 @@ public class Application  implements WebMvcConfigurer {
             points.add(new LatLon(48.2751726, 8.6505911));
 
             repository.save(new Location("Bonn", new LatLon(50.73743, 7.0982068), Difficulty.MEDIUM, Duration.ofHours(1), new ArrayList<LatLon>(), new ArrayList<Double>()));
-            repository.save(new Location("Trichtingen", new LatLon(48.2751726, 8.6505911), Difficulty.EASY, Duration.ofHours(1), points, new ArrayList<Double>()));
+            repository.save(new Location("Trichtingen", new LatLon(48.2751726, 8.6505911), Difficulty.EASY, Duration.ofHours(10), points, new ArrayList<Double>()));
 
 
             userDetailsService.saveUser("fabi", "test", "ADMIN");
+			userDetailsService.saveUser("user", "pw", "USER");
 /*
             String elevationCall = "https://maps.googleapis.com/maps/api/elevation/json?locations=39.7391536,-104.9847034&key=AIzaSyAdXfqEgqkjkDBBFC2dRoWU_-dST-S34dk";
             RestTemplate restTemplate = new RestTemplate();

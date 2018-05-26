@@ -1,18 +1,20 @@
 package com.unibz.hikinghelper;
 
 import com.unibz.hikinghelper.Constants.Constants;
+import com.unibz.hikinghelper.model.User;
 import com.unibz.hikinghelper.services.HikingUserDetailsServiceImpl;
+import com.unibz.hikinghelper.util.Utils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.util.ClassUtils;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.NoHandlerFoundException;
+import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -28,27 +30,27 @@ public class IndexController {
 
     private static final Logger log = LoggerFactory.getLogger(IndexController.class);
 
-    @Autowired PasswordEncoder passwordEncoder;
+    @Autowired
+    PasswordEncoder passwordEncoder;
 
-    @Autowired HikingUserDetailsServiceImpl userDetailsService;
+    @Autowired
+    HikingUserDetailsServiceImpl userDetailsService;
 
     @RequestMapping("exist/{username}")
-    public boolean userExists(@PathVariable("username") String username ) {
+    public boolean userExists(@PathVariable("username") String username) {
         return userDetailsService.loadUserByUsername(username) != null;
     }
 
-    @RequestMapping("addUser")
-    public String add(HttpServletRequest request, HttpServletResponse response) {
-        String username = request.getParameter(Constants.FORM_USERNAME);
-        String password = request.getParameter(Constants.FORM_PASSWORD);
-        if(username != null && password != null) {
+    @RequestMapping(value = "/addUser", method = RequestMethod.POST)
+    public RedirectView add(@ModelAttribute User user) {
+        String username = user.getUsername();
+        String password = user.getPassword();
+        if (username != null && password != null && !Utils.userExists(userDetailsService, username)) {
             userDetailsService.saveUser(username, password, Constants.ROLE_USER);
-            return "added";
+            return new RedirectView("/login?successful");
         } else {
-            return "Registration not possible";
+            return new RedirectView("/login");
         }
-
-
     }
 
     @RequestMapping("/cart")
@@ -66,6 +68,32 @@ public class IndexController {
     @RequestMapping("/login")
     public void login(HttpServletRequest request, HttpServletResponse response) {
         RequestDispatcher view = request.getRequestDispatcher("/static/login.html");
+        // Get authenticated user name from SecurityContext
+        try {
+            view.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @RequestMapping("/")
+    public void startPage(HttpServletRequest request, HttpServletResponse response) {
+        RequestDispatcher view = request.getRequestDispatcher("/static/startPage.html");
+        // Get authenticated user name from SecurityContext
+        try {
+            view.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @RequestMapping("/aboutUs")
+    public void aboutUs(HttpServletRequest request, HttpServletResponse response) {
+        RequestDispatcher view = request.getRequestDispatcher("/static/aboutUs.html");
         // Get authenticated user name from SecurityContext
         try {
             view.forward(request, response);

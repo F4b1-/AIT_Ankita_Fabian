@@ -25,8 +25,13 @@ public class UIHelper {
         aboutUsButton.addClickListener(clickEvent -> {
             ui.getPage().setLocation("/aboutUs.html");
         });
+        Button logoutButton = new Button("Logout");
+        logoutButton.addStyleNames(ValoTheme.BUTTON_LINK, ValoTheme.MENU_ITEM, "menuItem3");
+        logoutButton.addClickListener(clickEvent -> {
+            ui.getPage().setLocation("/logout");
+        });
 
-        CssLayout menu = new CssLayout(homeButton, favButton, aboutUsButton);
+        CssLayout menu = new CssLayout(homeButton, favButton, aboutUsButton, logoutButton);
         menu.addStyleName(ValoTheme.MENU_ROOT);
         return menu;
 

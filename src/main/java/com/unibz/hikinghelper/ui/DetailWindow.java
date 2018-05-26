@@ -63,11 +63,12 @@ public class DetailWindow extends Window {
             }
             favorites.add(location);
             wrappedSession.setAttribute("favorites", favorites);
+            showNotification("Favorites", "added to favorites");
         });
 
 
         VerticalLayout infoLayout = new VerticalLayout(labelName, labelDuration, labelDifficulty, favButton);
-        if (Utils.hasRole(Constants.ROLE_ADMIN, authorities)) {
+        if (Utils.isAdmin(authorities)) {
             Button elevationButton = new Button("Calculate altitude");
             elevationButton.addClickListener(clickEvent -> {
                 Location updatedLocation = elevationHelper.generateElevationDataForLocation(location);
@@ -161,6 +162,12 @@ public class DetailWindow extends Window {
         googleMap.addPolyline(currentOverlay);
 
         return googleMap;
+    }
+
+    private void showNotification(String caption, String description) {
+        Notification.show(caption,
+                description,
+                Notification.Type.TRAY_NOTIFICATION);
     }
 
 

@@ -15051,7 +15051,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .mytheme .background_image {
-	background: url('http://lucapisanu.epicend.com/wp-content/uploads/2014/04/03-1024x576.jpg') no-repeat fixed center;
+	background: url('app_background.jpg') no-repeat fixed center;
 	background-size: cover;
 	font-family: "Lato";
 }
@@ -15095,4 +15095,8 @@ div.v-layout.v-horizontal.v-widget {
 .mytheme .logoStyle {
 	position: absolute;
 	bottom: 0;
+}
+
+.mytheme .locationEditor {
+	background-color: #f1f1f1;
 }

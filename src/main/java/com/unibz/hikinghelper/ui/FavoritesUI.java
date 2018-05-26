@@ -83,7 +83,7 @@ public class FavoritesUI extends UI {
 
                 } ,
                 new ComponentRenderer()
-        ).setCaption( Constants.DOWNLOAD_BUTTON );
+        );
 
         // Initialize listing
         WrappedSession wrappedSession = VaadinService.getCurrentRequest().getWrappedSession();

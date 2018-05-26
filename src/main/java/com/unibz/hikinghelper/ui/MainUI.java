@@ -1,19 +1,21 @@
 package com.unibz.hikinghelper.ui;
 
+import com.unibz.hikinghelper.Constants.Constants;
 import com.unibz.hikinghelper.Location;
 import com.unibz.hikinghelper.LocationRepository;
+import com.unibz.hikinghelper.model.Difficulty;
+import com.unibz.hikinghelper.util.DownloadFileCreator;
 import com.unibz.hikinghelper.util.ElevationHelper;
 import com.unibz.hikinghelper.util.UIHelper;
+import com.unibz.hikinghelper.util.Utils;
 import com.vaadin.annotations.Theme;
 import com.vaadin.navigator.Navigator;
-import com.vaadin.server.ExternalResource;
-import com.vaadin.server.FontAwesome;
-import com.vaadin.server.ThemeResource;
-import com.vaadin.server.VaadinRequest;
+import com.vaadin.server.*;
 import com.vaadin.shared.ui.ValueChangeMode;
 import com.vaadin.spring.annotation.SpringUI;
 import com.vaadin.tapio.googlemaps.client.LatLon;
 import com.vaadin.ui.*;
+import com.vaadin.ui.renderers.ComponentRenderer;
 import com.vaadin.ui.themes.ValoTheme;
 
 import org.slf4j.Logger;
@@ -23,6 +25,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.util.StringUtils;
 
+import java.time.Duration;
+import java.util.ArrayList;
 import java.util.Collection;
 
 @Theme("mytheme")
@@ -58,13 +62,15 @@ public class MainUI extends UI {
 
     @Override
     protected void init(VaadinRequest request) {
+
+        Collection<GrantedAuthority> authorities =  getAuthorities();
     	
         CssLayout menu = UIHelper.createMenuBar(this);
         // build layout
         HorizontalLayout actions = new HorizontalLayout(filter, addNewBtn);
-        HorizontalLayout option = new HorizontalLayout(grid);
+        HorizontalLayout option = new HorizontalLayout(grid, editor);
 
-        VerticalLayout mainLayout1 = new VerticalLayout(actions, option, editor);
+        VerticalLayout mainLayout1 = new VerticalLayout(actions, option);
 		HorizontalLayout main = new HorizontalLayout(menu, mainLayout1);
 		Image image = new Image();
     	image.setSource(new ThemeResource("logo.jpg")); 
@@ -84,6 +90,20 @@ public class MainUI extends UI {
         //grid.addColumn(location -> location.getLatLon().getLon()).setCaption("Longitude").setId("longitude");
 
         grid.setColumns("name", "difficulty", "duration");
+
+        if (Utils.isAdmin(authorities)) {
+            grid.addColumn(
+                    location -> {
+                        Button editButton = new Button(Constants.EDIT_BUTTON);
+                        editButton.addClickListener(e -> editor.editLocation(location));
+                        
+                        return editButton;
+
+                    },
+                    new ComponentRenderer()
+            );
+        }
+
         filter.setPlaceholder("Filter by name");
 
         log.info(SecurityContextHolder.getContext().getAuthentication().getAuthorities().toArray()[0].toString());
@@ -98,20 +118,16 @@ public class MainUI extends UI {
         grid.asSingleSelect().addValueChangeListener(e -> {
             Location currentLocation = e.getValue();
             if (currentLocation != null) {
-                Collection<GrantedAuthority> authorities = (Collection<GrantedAuthority>)
-                        SecurityContextHolder.getContext().getAuthentication().getAuthorities();
-
-
                 DetailWindow detailWindow = new DetailWindow(currentLocation, elevationHelper, authorities);
                 addWindow(detailWindow);
 
             }
-            editor.editLocation(e.getValue());
+            //editor.editLocation(e.getValue());
 
         });
 
         // Instantiate and edit new Customer the new button is clicked
-        addNewBtn.addClickListener(e -> editor.editLocation(new Location("", new LatLon())));
+        addNewBtn.addClickListener(e -> editor.editLocation(new Location("", new LatLon(), Difficulty.MEDIUM, Duration.ofHours(0), new ArrayList<LatLon>() , new ArrayList<Double>())));
 
         // Listen changes made by the editor, refresh data from backend
         editor.setChangeHandler(() -> {
@@ -129,9 +145,22 @@ public class MainUI extends UI {
         if (StringUtils.isEmpty(filterText)) {
             grid.setItems(repo.findAll());
         } else {
-            grid.setItems(repo.findByName(filterText));
+            Location foundLocation =repo.findByName(filterText);
+            if(foundLocation != null) {
+                grid.setItems(foundLocation);
+            } else {
+                grid.setItems(new ArrayList<>());
+
+            }
+
         }
     }
+
+    private Collection<GrantedAuthority> getAuthorities() {
+        return (Collection<GrantedAuthority>)
+                SecurityContextHolder.getContext().getAuthentication().getAuthorities();
+    }
+
 
 
 }
