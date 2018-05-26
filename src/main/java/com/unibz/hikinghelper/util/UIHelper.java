@@ -23,7 +23,7 @@ public class UIHelper {
         Button aboutUsButton = new Button("About Us");
         aboutUsButton.addStyleNames(ValoTheme.BUTTON_LINK, ValoTheme.MENU_ITEM, "menuItem3");
         aboutUsButton.addClickListener(clickEvent -> {
-            //ui.getPage().setLocation("/aboutUs");
+            ui.getPage().setLocation("/aboutUs.html");
         });
 
         CssLayout menu = new CssLayout(homeButton, favButton, aboutUsButton);

@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>HikingHelper</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="PhotoSpot">
+	<meta name="keywords" content="PhotoSpot">
+	<meta name="author" content="LBaranda26">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" media="all" href="style.css" />
+	<link rel="stylesheet" type="text/css" href="responsive-style.css">
+	<link rel="stylesheet" type="text/css" href="contact.css">
+	<link rel="stylesheet" href="blueberry.css" />
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.blueberry.js"></script>
+	<script type="text/javascript" src="jquery.blueberry-load.js"></script>
+	<script type="text/javascript" src="back-to-top.js"></script>
+	<script type="text/javascript" src="aboutUsForm.js"></script>
+</head>
+<body>
+	<header>
+		<div id="main">
+
+			<div class="wrapper row">
+				<div class="logo col span_4"><a href="startPage.html"><img src="logo.jpg" alt="HikingHelper"></a></div>
+				<nav class="col span_8">
+					<span onclick="openNav()">
+						<div class="bar-1"></div>
+						<div class="bar-1"></div>
+						<div class="bar-1"></div>
+						<div class="bar-1"></div>
+						<div class="bar-1"></div>
+					</span>
+					<div id="myNav" class="overlay">
+						<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+						<div class="overlay-content">
+							<ul id="menu-nav">
+								<li><a href="/application">HOME</a></li>
+								<li><a href="login.html">LOGIN</a></li>
+								<li><a href="registration.html">REGISTRATION</a></li>
+								<li><a href="/favourites">YOUR FAVOURITES</a></li>
+								<li><a href="/logout">LOGOUT</a></li>
+							</ul>
+						</div>
+					</div>
+					<ul id="main-nav">
+						<li><a href="/application" style="color:black; text-decoration:none">HOME</a></li>
+						<li><a href="login.html" style="color:black; text-decoration:none">LOGIN</a></li>
+						<li><a href="registration.html" style="color:black; text-decoration:none">REGISTRATION</a></li>
+						<li><a href="/favourites" style="color:black; text-decoration:none">YOUR FAVOURITES</a></li>
+						<li><a href="/logout" style="color:black; text-decoration:none">LOGOUT</a></li>
+				 </ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<br><br><br><br><br><br>
+	<h1>About Us</h1><br>
+	<h4><center>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+		non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</center><br></h4>
+<br> <br>
+<h4><center>
+Get in touch with us!</center></h4>
+
+<div class="container">
+  <form action="/action_page.php">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+			<option value="india">India</option>
+      <option value="germany">Germany</option>
+      <option value="italy">Italy</option>
+    </select>
+
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>
