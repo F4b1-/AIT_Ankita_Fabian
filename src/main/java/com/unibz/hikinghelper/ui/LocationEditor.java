@@ -2,20 +2,22 @@ package com.unibz.hikinghelper.ui;
 
 import com.unibz.hikinghelper.Location;
 import com.unibz.hikinghelper.LocationRepository;
+import com.unibz.hikinghelper.model.Difficulty;
 import com.vaadin.data.Binder;
 import com.vaadin.data.ValueProvider;
 import com.vaadin.event.ShortcutAction;
 import com.vaadin.icons.VaadinIcons;
 import com.vaadin.server.Setter;
+import com.vaadin.shared.ui.Orientation;
+import com.vaadin.shared.ui.slider.SliderOrientation;
 import com.vaadin.spring.annotation.SpringComponent;
 import com.vaadin.spring.annotation.UIScope;
 import com.vaadin.tapio.googlemaps.client.LatLon;
-import com.vaadin.ui.Button;
-import com.vaadin.ui.CssLayout;
-import com.vaadin.ui.TextField;
-import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.*;
 import com.vaadin.ui.themes.ValoTheme;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.time.Duration;
 
 /**
  * A simple example to introduce building forms. As your real application is probably much
@@ -41,7 +43,8 @@ public class LocationEditor extends VerticalLayout {
 	TextField name = new TextField("Name");
 	TextField lat = new TextField("Latitude");
 	TextField lon = new TextField("Longitude");
-	LatLon latLon = new LatLon();
+	RadioButtonGroup<String> difficulty = new RadioButtonGroup<String>("Difficulty");
+    Slider duration = new Slider("Duration", 0, 20);
 
 	/* Action buttons */
 	Button save = new Button("Save", VaadinIcons.CHECK);
@@ -54,13 +57,31 @@ public class LocationEditor extends VerticalLayout {
 	@Autowired
 	public LocationEditor(LocationRepository repository) {
 		this.repository = repository;
+		HorizontalLayout mainEditor = new HorizontalLayout();
+		difficulty.setItems(Difficulty.EASY.toString(), Difficulty.MEDIUM.toString(), Difficulty.HIGH.toString());
+        duration.setOrientation(SliderOrientation.HORIZONTAL);
+        VerticalLayout detailsV1 =  new VerticalLayout(name, lat, lon);
+        VerticalLayout detailsV2 =  new VerticalLayout(difficulty, duration);
+        // Create a vertical slider
 
-		addComponents(name, lat, lon, actions);
+
+        mainEditor.addComponents(detailsV1, detailsV2);
+		addComponents(mainEditor, actions);
+		addStyleNames("locationEditor");
 
 		// bind using naming convention
 	//	binder.bindInstanceFields(this);
 
         binder.bind(name, Location::getName, Location::setName);
+
+        binder.bind(duration,
+                (ValueProvider<Location, Double>) location -> new Long(location.getDuration().toHours()).doubleValue(),
+                (Setter<Location, Double>) (location, duration) -> location.setDuration(Duration.ofHours(duration.longValue())));
+
+
+        binder.bind(difficulty,
+                (ValueProvider<Location, String>) location -> location.getDifficulty().toString(),
+                (Setter<Location, String>) (location, difficulty) -> location.setDifficulty(Difficulty.valueOf(difficulty)));
 
         binder.bind(lat,
                 (ValueProvider<Location, String>) location -> String.valueOf(location.getLatLon().getLat()),
@@ -81,7 +102,7 @@ public class LocationEditor extends VerticalLayout {
 		// wire action buttons to save, delete and reset
 		save.addClickListener(e -> repository.save(location));
 		delete.addClickListener(e -> repository.delete(location));
-		cancel.addClickListener(e -> editLocation(location));
+		cancel.addClickListener(e -> editLocation(null));
 		setVisible(false);
 	}
 
@@ -103,7 +124,7 @@ public class LocationEditor extends VerticalLayout {
 		else {
 			location = l;
 		}
-		cancel.setVisible(persisted);
+		//cancel.setVisible(persisted);
 
 		// Bind customer properties to similarly named fields
 		// Could also use annotation or "manual binding" or programmatically
