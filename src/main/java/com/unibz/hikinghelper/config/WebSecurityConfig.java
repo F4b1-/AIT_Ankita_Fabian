@@ -3,6 +3,7 @@ package com.unibz.hikinghelper.config;
 import com.unibz.hikinghelper.services.HikingUserDetailsServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -34,7 +35,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
         http
                 .authorizeRequests()
-                .antMatchers("/exist/**", "/addUser", "/registration", "/css/**", "/js/**", "/static/**").permitAll()
+                .antMatchers( "/exist/**", "/registration", "/css/**", "/js/**", "/static/**", "/login*", "/aboutUs", "/startPage", "/").permitAll()
+                .antMatchers(HttpMethod.POST, "/addUser").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()

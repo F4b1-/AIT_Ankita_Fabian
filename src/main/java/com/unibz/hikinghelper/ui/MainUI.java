@@ -96,7 +96,7 @@ public class MainUI extends UI {
                     location -> {
                         Button editButton = new Button(Constants.EDIT_BUTTON);
                         editButton.addClickListener(e -> editor.editLocation(location));
-                        editButton.addStyleName(ValoTheme.BUTTON_PRIMARY);
+                        
                         return editButton;
 
                     },

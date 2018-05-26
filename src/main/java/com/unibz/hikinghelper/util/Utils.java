@@ -1,6 +1,7 @@
 package com.unibz.hikinghelper.util;
 
 import com.unibz.hikinghelper.Constants.Constants;
+import com.unibz.hikinghelper.services.HikingUserDetailsServiceImpl;
 import org.springframework.security.core.GrantedAuthority;
 
 import java.util.Collection;
@@ -23,5 +24,14 @@ public class Utils {
 
         return hasRole(Constants.ROLE_ADMIN, authorities);
 
+    }
+
+
+    public static boolean userExists(HikingUserDetailsServiceImpl userDetailsService, String userName) {
+        if (userDetailsService.findUserByUsername(userName) != null) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

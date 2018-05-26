@@ -32,7 +32,7 @@ public class HikingUserDetailsServiceImpl implements UserDetailsService {
         return builder.build();
     }
 
-    private User findUserByUsername(String username) {
+    public User findUserByUsername(String username) {
         return userRepository.findByUsername(username);
 
     }
