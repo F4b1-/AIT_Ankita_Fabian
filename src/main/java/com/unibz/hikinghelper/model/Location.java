@@ -1,4 +1,4 @@
-package com.unibz.hikinghelper;
+package com.unibz.hikinghelper.model;
 
 import com.unibz.hikinghelper.model.Difficulty;
 import com.vaadin.tapio.googlemaps.client.LatLon;

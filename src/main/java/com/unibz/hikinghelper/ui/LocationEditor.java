@@ -1,18 +1,16 @@
 package com.unibz.hikinghelper.ui;
 
-import com.unibz.hikinghelper.Location;
-import com.unibz.hikinghelper.LocationRepository;
+import com.unibz.hikinghelper.model.Location;
+import com.unibz.hikinghelper.dao.LocationRepository;
 import com.unibz.hikinghelper.model.Difficulty;
 import com.vaadin.data.Binder;
 import com.vaadin.data.ValueProvider;
 import com.vaadin.event.ShortcutAction;
 import com.vaadin.icons.VaadinIcons;
 import com.vaadin.server.Setter;
-import com.vaadin.shared.ui.Orientation;
 import com.vaadin.shared.ui.slider.SliderOrientation;
 import com.vaadin.spring.annotation.SpringComponent;
 import com.vaadin.spring.annotation.UIScope;
-import com.vaadin.tapio.googlemaps.client.LatLon;
 import com.vaadin.ui.*;
 import com.vaadin.ui.themes.ValoTheme;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,17 +1,14 @@
 package com.unibz.hikinghelper.util;
 
-import com.unibz.hikinghelper.Application;
 import com.unibz.hikinghelper.Constants.Constants;
-import com.unibz.hikinghelper.Location;
-import com.unibz.hikinghelper.LocationRepository;
+import com.unibz.hikinghelper.model.Location;
+import com.unibz.hikinghelper.dao.LocationRepository;
 import com.unibz.hikinghelper.model.Elevation;
 import com.unibz.hikinghelper.model.Results;
-import com.vaadin.spring.annotation.SpringComponent;
 import com.vaadin.tapio.googlemaps.client.LatLon;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 

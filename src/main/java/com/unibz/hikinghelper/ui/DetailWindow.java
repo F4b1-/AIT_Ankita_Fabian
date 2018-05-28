@@ -7,10 +7,9 @@ import com.byteowls.vaadin.chartjs.data.Dataset;
 import com.byteowls.vaadin.chartjs.data.LineDataset;
 import com.byteowls.vaadin.chartjs.options.Position;
 import com.unibz.hikinghelper.Constants.Constants;
-import com.unibz.hikinghelper.Location;
+import com.unibz.hikinghelper.model.Location;
 import com.unibz.hikinghelper.util.ElevationHelper;
 import com.unibz.hikinghelper.util.Utils;
-import com.vaadin.server.Resource;
 import com.vaadin.server.VaadinService;
 import com.vaadin.server.WrappedSession;
 import com.vaadin.spring.annotation.UIScope;
@@ -20,13 +19,10 @@ import com.vaadin.tapio.googlemaps.client.overlays.GoogleMapPolyline;
 import com.vaadin.ui.*;
 import com.vaadin.ui.themes.ValoTheme;
 import org.springframework.security.core.GrantedAuthority;
-import sun.management.counter.Units;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-
-import javax.swing.Icon;
 
 
 @UIScope

@@ -1,7 +1,7 @@
 package com.unibz.hikinghelper.util;
 
 import com.unibz.hikinghelper.Constants.Constants;
-import com.unibz.hikinghelper.Location;
+import com.unibz.hikinghelper.model.Location;
 import com.vaadin.server.StreamResource;
 import io.jenetics.jpx.GPX;
 import org.apache.commons.csv.CSVFormat;

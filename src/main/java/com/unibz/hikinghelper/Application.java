@@ -1,28 +1,20 @@
 package com.unibz.hikinghelper;
 
-import com.google.gwt.maps.client.services.ElevationResult;
-import com.unibz.hikinghelper.Constants.Constants;
-import com.unibz.hikinghelper.dao.UserRepository;
+import com.unibz.hikinghelper.dao.LocationRepository;
 import com.unibz.hikinghelper.model.Difficulty;
-import com.unibz.hikinghelper.model.Elevation;
+import com.unibz.hikinghelper.model.Location;
 import com.unibz.hikinghelper.services.HikingUserDetailsServiceImpl;
-import com.vaadin.annotations.Theme;
 import com.vaadin.tapio.googlemaps.client.LatLon;
-import net.sf.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
