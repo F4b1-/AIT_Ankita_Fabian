@@ -1,22 +1,19 @@
 package com.unibz.hikinghelper.ui;
 
 import com.unibz.hikinghelper.Constants.Constants;
-import com.unibz.hikinghelper.Location;
-import com.unibz.hikinghelper.LocationRepository;
+import com.unibz.hikinghelper.model.Location;
+import com.unibz.hikinghelper.dao.LocationRepository;
 import com.unibz.hikinghelper.model.Difficulty;
-import com.unibz.hikinghelper.util.DownloadFileCreator;
 import com.unibz.hikinghelper.util.ElevationHelper;
 import com.unibz.hikinghelper.util.UIHelper;
 import com.unibz.hikinghelper.util.Utils;
 import com.vaadin.annotations.Theme;
-import com.vaadin.navigator.Navigator;
 import com.vaadin.server.*;
 import com.vaadin.shared.ui.ValueChangeMode;
 import com.vaadin.spring.annotation.SpringUI;
 import com.vaadin.tapio.googlemaps.client.LatLon;
 import com.vaadin.ui.*;
 import com.vaadin.ui.renderers.ComponentRenderer;
-import com.vaadin.ui.themes.ValoTheme;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -3,8 +3,9 @@
 /*IMPORT-12-COLUMN-RESPONSIVE-GS*/
 @import url("responsive.gs.12col.css");
 body{
-	background-image:url("/static/mountains-big-long-range-covered-in-fog-HD-1920×1080-wallpaper-wp6607598.jpg");background-size: cover; background-repeat: no-repeat;
-  	font-family: 'Lato';
+	background-size: cover;
+	background: url("/static/mountains-big-long-range-covered-in-fog-HD-1920×1080-wallpaper-wp6607598.jpg") no-repeat;
+	font-family: 'Lato';
 
 }
 h1{font-size: 2rem;}

@@ -1,5 +1,6 @@
-package com.unibz.hikinghelper;
+package com.unibz.hikinghelper.dao;
 
+import com.unibz.hikinghelper.model.Location;
 import com.vaadin.tapio.googlemaps.client.LatLon;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
