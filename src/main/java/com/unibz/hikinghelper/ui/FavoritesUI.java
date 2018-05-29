@@ -54,7 +54,7 @@ public class FavoritesUI extends UI {
         ComboBox<String> formatComboBox = new ComboBox<>("Desired download format");
         formatComboBox.setEmptySelectionAllowed(false);
         formatComboBox.setItems(Constants.GPX_FILE, Constants.CSV_FILE);
-        formatComboBox.setSelectedItem("gpx");
+        formatComboBox.setSelectedItem(Constants.GPX_FILE);
 
         formatComboBox.addValueChangeListener(event -> {
             grid.clearSortOrder();
@@ -68,7 +68,8 @@ public class FavoritesUI extends UI {
         main.setSizeFull();
         setContent(main);
 
-        grid.setColumns("name", "difficulty", "duration");
+        grid.setColumns("name", "difficulty");
+        grid.addColumn(location -> location.getDuration().toHours()).setCaption("Duration in h");
 
 
         grid.addColumn(

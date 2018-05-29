@@ -39,7 +39,7 @@ public class DownloadFileCreator {
                 e.printStackTrace();
                 return null;
             }
-        }, location.getName());
+        }, location.getName() + Constants.GPX_FILE);
     }
 
 
@@ -62,7 +62,7 @@ public class DownloadFileCreator {
                 e.printStackTrace();
                 return null;
             }
-        }, location.getName());
+        }, location.getName() + Constants.CSV_FILE) ;
     }
 
     private static CSVPrinter getDefaultCsvPrinter(BufferedWriter writer) throws IOException {

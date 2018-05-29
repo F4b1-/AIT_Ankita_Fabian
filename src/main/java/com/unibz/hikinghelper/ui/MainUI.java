@@ -67,6 +67,7 @@ public class MainUI extends UI {
         HorizontalLayout actions = new HorizontalLayout(filter, addNewBtn);
         HorizontalLayout option = new HorizontalLayout(grid, editor);
 
+
         VerticalLayout mainLayout1 = new VerticalLayout(actions, option);
 		HorizontalLayout main = new HorizontalLayout(menu, mainLayout1);
 		Image image = new Image();
@@ -83,10 +84,9 @@ public class MainUI extends UI {
 		setContent(main);
         grid.setHeight(300, Unit.PIXELS);
 
-        //grid.addColumn(location -> location.getDuration()).setCaption("Duration");
-        //grid.addColumn(location -> location.getLatLon().getLon()).setCaption("Longitude").setId("longitude");
 
-        grid.setColumns("name", "difficulty", "duration");
+        grid.setColumns("name", "difficulty");
+        grid.addColumn(location -> location.getDuration().toHours()).setCaption("Duration in h");
 
         if (Utils.isAdmin(authorities)) {
             grid.addColumn(

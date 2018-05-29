@@ -104,7 +104,7 @@ public class DetailWindow extends Window {
     private BarChartConfig generateBarConfig() {
         ArrayList<Double> elevationPoints = location.getElevationPoints();
         String[] labelsMarks = new String[elevationPoints.size()];
-        for (int i = 0; i < elevationPoints.size(); i++) {
+        for (int i = 0; i < labelsMarks.length; i++) {
             labelsMarks[i] = String.valueOf(i + 1) + ". mark";
         }
 

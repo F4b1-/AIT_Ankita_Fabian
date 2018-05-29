@@ -60,19 +60,45 @@ public class Application  implements WebMvcConfigurer {
 			// save a couple of customers
             repository.deleteAll();
 
+            repository.save(new Location("Bonn", new LatLon(50.73743, 7.0982068), Difficulty.MEDIUM, Duration.ofHours(1), new ArrayList<LatLon>(), new ArrayList<Double>()));
+
             ArrayList<LatLon> points = new ArrayList<LatLon>();
-
-
             points.add(new LatLon(48.2751726, 8.6505911));
             points.add(new LatLon(48.275, 8.655));
             points.add(new LatLon(48.270, 8.651));
             points.add(new LatLon(48.2751726, 8.6505911));
+            repository.save(new Location("Trichtingen, DE", new LatLon(48.2751726, 8.6505911), Difficulty.EASY, Duration.ofHours(10), points, new ArrayList<Double>()));
 
-            repository.save(new Location("Bonn", new LatLon(50.73743, 7.0982068), Difficulty.MEDIUM, Duration.ofHours(1), new ArrayList<LatLon>(), new ArrayList<Double>()));
-            repository.save(new Location("Trichtingen", new LatLon(48.2751726, 8.6505911), Difficulty.EASY, Duration.ofHours(10), points, new ArrayList<Double>()));
+			ArrayList<LatLon> pointsBolzano = new ArrayList<LatLon>();
+            pointsBolzano.add(new LatLon(46.498295, 11.354758));
+            pointsBolzano.add(new LatLon(46.499249, 11.352369));
+            pointsBolzano.add(new LatLon(46.497802, 11.352455));
+            pointsBolzano.add(new LatLon(46.498295, 11.354758));
+            repository.save(new Location("Bolzano, IT", new LatLon(46.498295, 11.354758), Difficulty.EASY, Duration.ofHours(1), pointsBolzano, new ArrayList<Double>()));
+
+            ArrayList<LatLon> pointsNagpur = new ArrayList<LatLon>();
+            pointsNagpur.add(new LatLon(21.147305, 79.081145));
+            pointsNagpur.add(new LatLon(21.152668, 79.081038));
+            pointsNagpur.add(new LatLon(21.153540, 79.087261));
+            pointsNagpur.add(new LatLon(21.145803, 79.088259));
+            pointsNagpur.add(new LatLon(21.147305, 79.081145));
+            repository.save(new Location("Nagpur, IN", new LatLon(21.145800, 79.088155), Difficulty.MEDIUM, Duration.ofHours(1), pointsNagpur, new ArrayList<Double>()));
+
+            ArrayList<LatLon> pointsEverest = new ArrayList<LatLon>();
+            pointsEverest.add(new LatLon(28.066057, 86.865008));
+            pointsEverest.add(new LatLon(28.045202, 86.884805));
+            pointsEverest.add(new LatLon(28.005198, 86.879312));
+            pointsEverest.add(new LatLon(27.985190, 86.921884));
+            pointsEverest.add(new LatLon(27.955474, 86.957590));
+            pointsEverest.add(new LatLon(27.968564, 87.094003));
+            pointsEverest.add(new LatLon(27.920038, 87.072030));
+            pointsEverest.add(new LatLon(27.920038, 87.072030));
+            repository.save(new Location("Mt. Everest", new LatLon(27.988121, 86.924975), Difficulty.HIGH, Duration.ofHours(12), pointsEverest, new ArrayList<Double>()));
 
 
-            userDetailsService.saveUser("fabi", "test", "ADMIN");
+
+
+            userDetailsService.saveUser("admin", "admin", "ADMIN");
 			userDetailsService.saveUser("user", "pw", "USER");
 /*
             String elevationCall = "https://maps.googleapis.com/maps/api/elevation/json?locations=39.7391536,-104.9847034&key=AIzaSyAdXfqEgqkjkDBBFC2dRoWU_-dST-S34dk";
