@@ -1,12 +1,12 @@
-# AIT_Ankita_Fabian
+# HikingHelper
+Ankita Sadu 
+Fabian Gand
 
-Hey, before running the application you probably need to compile the widgetset:
-Run
+Before running the application locally you need to compile the widgetset
+and the theme.
+Run:
 
-```
-mvn vaadin:update-widgetset
-```
-and
 ```
 mvn package
 ```
+Then start the application as a spring boot application
