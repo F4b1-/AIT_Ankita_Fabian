@@ -32,6 +32,7 @@ public class ElevationHelper {
     public Location generateElevationDataForLocation(Location location) {
         ArrayList<LatLon> route = location.getRoute();
         ArrayList<Double> elevationPoints = new ArrayList<Double>();
+
         for (LatLon latLon : route) {
             elevationPoints.add(Double.valueOf(getAltitude(latLon)));
         }
@@ -47,6 +48,7 @@ public class ElevationHelper {
         String singleAltitude = "";
         String elevationCall = "https://maps.googleapis.com/maps/api/elevation/json?locations=" + latLon.getLat() + "," + latLon.getLon() + "&key=" + Constants.GOOGLE_API_KEY;
         RestTemplate restTemplate = new RestTemplate();
+
         Elevation elevation = restTemplate.getForObject(elevationCall, Elevation.class);
         if (elevation != null) {
             List<Results> results = elevation.getResults();
@@ -55,7 +57,7 @@ public class ElevationHelper {
             }
 
         }
-        log.info(singleAltitude);
+
         return singleAltitude;
     }
 

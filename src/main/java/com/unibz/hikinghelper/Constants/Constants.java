@@ -18,6 +18,6 @@ public final class Constants {
     // ** FAVORITES UI **
     public static final String DOWNLOAD_BUTTON = "Download";
 
-    public static final String CSV_FILE = "csv";
-    public static final String GPX_FILE = "gpx";
+    public static final String CSV_FILE = ".csv";
+    public static final String GPX_FILE = ".gpx";
 }

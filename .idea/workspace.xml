@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44f1297c-4ff7-4d56-8769-dcbfe1824930" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/dark-mountains-1.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/VAADIN/themes/mytheme/mytheme.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/VAADIN/themes/mytheme/mytheme.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/VAADIN/themes/mytheme/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/VAADIN/themes/mytheme/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/css/startPageButton.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/startPageButton.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/css/startPageStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/startPageStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/aboutUs.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/aboutUs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/startPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/startPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/Constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/Constants/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/DetailWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/DetailWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/FavoritesUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/FavoritesUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/MainUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/MainUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/util/DownloadFileCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/util/DownloadFileCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/util/ElevationHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/util/ElevationHelper.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,12 +24,17 @@
       <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-              <folding>
-                <element signature="e#1930#1931#0" expanded="true" />
-                <element signature="e#1977#1978#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1035">
+              <caret line="94" column="25" selection-start-line="94" selection-start-column="25" selection-end-line="94" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Constants.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/Constants/Constants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="59" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="88" />
             </state>
           </provider>
         </entry>
@@ -39,26 +42,17 @@
       <file leaf-file-name="ElevationHelper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/util/ElevationHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+            <state relative-caret-position="540">
+              <caret line="59" selection-start-line="59" selection-end-line="59" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/dao/UserRepository.java">
+      <file leaf-file-name="Difficulty.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/model/Difficulty.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Location.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/model/Location.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            <state relative-caret-position="30">
+              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -66,8 +60,8 @@
       <file leaf-file-name="DetailWindow.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/DetailWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1425">
-              <caret line="169" column="1" lean-forward="true" selection-start-line="169" selection-start-column="1" selection-end-line="169" selection-end-column="1" />
+            <state relative-caret-position="272">
+              <caret line="116" lean-forward="true" selection-start-line="116" selection-end-line="116" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -75,43 +69,47 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/css/style.css">
+      <file leaf-file-name="FavoritesUI.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/FavoritesUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-880">
-              <caret column="6" selection-start-column="6" selection-end-column="6" />
+            <state relative-caret-position="369">
+              <caret line="71" column="97" selection-start-line="71" selection-start-column="97" selection-end-line="71" selection-end-column="97" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="startPage.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/startPage.html">
+      <file leaf-file-name="LocationEditor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/LocationEditor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="78" selection-start-line="27" selection-start-column="78" selection-end-line="27" selection-end-column="78" />
+            <state relative-caret-position="285">
+              <caret line="126" column="10" selection-start-line="126" selection-start-column="10" selection-end-line="126" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="startPageStyle.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/css/startPageStyle.css">
+      <file leaf-file-name="MainUI.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/MainUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2425">
-              <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
+            <state relative-caret-position="240">
+              <caret line="88" column="8" selection-start-line="88" selection-start-column="8" selection-end-line="88" selection-end-column="97" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styles.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/VAADIN/themes/mytheme/styles.scss">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file leaf-file-name="HikingUserDetailsServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/services/HikingUserDetailsServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
+            </state>
+          </provider>
         </entry>
       </file>
-      <file leaf-file-name="styles.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/VAADIN/themes/mytheme/styles.css">
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/model/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="15059" column="17" lean-forward="true" selection-start-line="15059" selection-start-column="17" selection-end-line="15059" selection-end-column="17" />
+            <state relative-caret-position="345">
+              <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -180,22 +178,15 @@
         <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/config/AppErrorController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/config/ExceptionController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/config/AppInitializer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/util/ElevationHelper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/public/error/404.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/UiHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/VaadinUI.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/LettingUserDownloadFile.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/util/DownloadFileCreator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/FavoritesUI.java" />
         <option value="$PROJECT_DIR$/src/main/resources/VAADIN/themes/mytheme/mytheme.scss" />
-        <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/Constants/Constants.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/LocationEditor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/Location.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/Application.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/util/UIHelper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/DetailWindow.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/MainUI.java" />
         <option value="$PROJECT_DIR$/src/main/resources/js/register.js" />
         <option value="$PROJECT_DIR$/src/main/resources/banner.txt" />
         <option value="$PROJECT_DIR$/src/main/resources/static/registration.html" />
@@ -210,6 +201,13 @@
         <option value="$PROJECT_DIR$/src/main/resources/css/startPageStyle.css" />
         <option value="$PROJECT_DIR$/src/main/resources/static/startPage.html" />
         <option value="$PROJECT_DIR$/src/main/resources/VAADIN/themes/mytheme/styles.css" />
+        <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/Constants/Constants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/util/DownloadFileCreator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/MainUI.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/Application.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/util/ElevationHelper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/DetailWindow.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/FavoritesUI.java" />
       </list>
     </option>
   </component>
@@ -223,10 +221,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="71" />
-    <option name="y" value="124" />
-    <option name="width" value="1707" />
-    <option name="height" value="754" />
+    <option name="y" value="27" />
+    <option name="width" value="960" />
+    <option name="height" value="898" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -236,7 +233,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -373,20 +369,12 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="mytheme" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="gs-crud-with-vaadin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="complete" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mytheme" type="462c0819:PsiDirectoryNode" />
-              <item name="styles.scss" type="620a8d5e:NestingTreeNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -595,15 +583,16 @@
       <workItem from="1527415457866" duration="1095000" />
       <workItem from="1527451208144" duration="1267000" />
       <workItem from="1527519624587" duration="567000" />
-      <workItem from="1527533548698" duration="2086000" />
+      <workItem from="1527533548698" duration="2214000" />
+      <workItem from="1527620635051" duration="4585000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="215013000" />
+    <option name="totallyTimeSpent" value="219726000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
+    <frame x="0" y="27" width="1920" height="898" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -613,35 +602,35 @@
       <window_info anchor="right" id="CDI" order="4" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info id="Structure" order="1" sideWeight="0.31070495" side_tool="true" visible="true" weight="0.4" />
+      <window_info id="Structure" order="1" sideWeight="0.31270358" side_tool="true" visible="true" weight="0.346875" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.398773" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.2843602" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.28056628" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.48351648" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.17811158" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.20978121" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.68929505" visible="true" weight="0.4" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6872964" visible="true" weight="0.346875" />
       <window_info anchor="right" id="Bean Validation" order="3" />
       <window_info id="Web" order="2" side_tool="true" />
-      <window_info anchor="right" id="Gradle" order="3" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Dependency Viewer" order="8" weight="0.32939914" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Gradle" order="3" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32971507" />
+      <window_info anchor="bottom" id="Inspection Results" order="8" weight="0.2985843" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection Results" order="8" weight="0.2985843" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32971507" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -666,6 +655,20 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/css/startPageStyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/VAADIN/themes/mytheme/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225885">
+          <caret line="15059" column="17" lean-forward="true" selection-start-line="15059" selection-start-column="17" selection-end-line="15059" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/config/AppErrorController.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/config/ExceptionController.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/config/AppInitializer.java" />
@@ -741,13 +744,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/LocationEditor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="126" column="10" selection-start-line="126" selection-start-column="10" selection-end-line="126" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/util/Objects.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="278">
@@ -759,20 +755,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="341">
           <caret line="33" column="89" selection-start-line="33" selection-start-column="89" selection-end-line="33" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/FavoritesUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="74" selection-start-line="74" selection-end-line="85" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/MainUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="98" column="24" selection-start-line="98" selection-start-column="24" selection-end-line="98" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -794,13 +776,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -846,44 +821,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/config/WebSecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="24" column="55" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
-          <folding>
-            <element signature="e#967#968#0" expanded="true" />
-            <element signature="e#1024#1025#0" expanded="true" />
-            <element signature="e#1276#1277#0" expanded="true" />
-            <element signature="e#1326#1327#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/Constants/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="50" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/IndexController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="664">
           <caret line="80" column="22" selection-start-line="80" selection-start-column="22" selection-end-line="80" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/dao/LocationRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="10" column="44" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/services/HikingUserDetailsServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
         </state>
       </provider>
     </entry>
@@ -894,24 +835,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/util/DownloadFileCreator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="36" column="67" selection-start-line="36" selection-start-column="67" selection-end-line="36" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-158" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gradlew">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvnw">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle" />
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -922,51 +846,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <element signature="e#1930#1931#0" expanded="true" />
-            <element signature="e#1977#1978#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/util/ElevationHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/dao/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/model/Location.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/DetailWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1425">
-          <caret line="169" column="1" lean-forward="true" selection-start-line="169" selection-start-column="1" selection-end-line="169" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-880">
+        <state>
           <caret column="6" selection-start-column="6" selection-end-column="6" />
         </state>
       </provider>
@@ -980,18 +862,130 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/css/startPageStyle.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2425">
+        <state relative-caret-position="45">
           <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/VAADIN/themes/mytheme/styles.scss">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/VAADIN/themes/mytheme/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
           <caret line="15059" column="17" lean-forward="true" selection-start-line="15059" selection-start-column="17" selection-end-line="15059" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/util/DownloadFileCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="64" column="50" selection-start-line="64" selection-start-column="50" selection-end-line="64" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/model/Location.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/config/WebSecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="55" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#967#968#0" expanded="true" />
+            <element signature="e#1024#1025#0" expanded="true" />
+            <element signature="e#1276#1277#0" expanded="true" />
+            <element signature="e#1326#1327#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/dao/LocationRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="10" column="44" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/dao/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/services/HikingUserDetailsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/LocationEditor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="126" column="10" selection-start-line="126" selection-start-column="10" selection-end-line="126" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/model/Difficulty.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/Constants/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="59" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/util/ElevationHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/DetailWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="116" lean-forward="true" selection-start-line="116" selection-end-line="116" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1035">
+          <caret line="94" column="25" selection-start-line="94" selection-start-column="25" selection-end-line="94" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/MainUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="88" column="8" selection-start-line="88" selection-start-column="8" selection-end-line="88" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/unibz/hikinghelper/ui/FavoritesUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="71" column="97" selection-start-line="71" selection-start-column="97" selection-end-line="71" selection-end-column="97" />
         </state>
       </provider>
     </entry>
