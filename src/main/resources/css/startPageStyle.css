@@ -3,8 +3,8 @@
 /*IMPORT-12-COLUMN-RESPONSIVE-GS*/
 @import url("responsive.gs.12col.css");
 body {
-    background: url('/static/dark-mountains-1.jpg') no-repeat fixed center center;
-    background-size: cover;
+	background: url('/static/darkmountains.jpg');
+	background-repeat: no-repeat;
     font-family: Montserrat;
 }
 h1{font-size: 2rem;}

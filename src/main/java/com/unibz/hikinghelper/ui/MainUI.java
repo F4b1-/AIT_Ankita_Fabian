@@ -71,7 +71,7 @@ public class MainUI extends UI {
 		HorizontalLayout main = new HorizontalLayout(menu, mainLayout1);
 		Image image = new Image();
     	image.setSource(new ThemeResource("logo.jpg")); 
-    	image.setWidth("160px");
+    	image.setWidth("170px");
     	image.setHeight("80px");
     	
     	menu.addComponent(image);
