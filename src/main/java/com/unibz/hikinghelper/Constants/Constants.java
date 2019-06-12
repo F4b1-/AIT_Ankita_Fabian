@@ -12,7 +12,7 @@ public final class Constants {
 
 
 
-    public static final String GOOGLE_API_KEY = "AIzaSyAdXfqEgqkjkDBBFC2dRoWU_-dST-S34dk";
+    public static final String GOOGLE_API_KEY = ""; // ADD KEY HERE
 
 
     // ** FAVORITES UI **
